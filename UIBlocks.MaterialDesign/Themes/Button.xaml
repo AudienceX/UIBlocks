@@ -13,7 +13,7 @@
         </Setter>
     </Style>
 
-    <!--设置圆形按钮样式/-->
+    <!--设置圆形按钮样式。/-->
     <Style x:Key="MDCircleButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>

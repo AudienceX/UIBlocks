@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel>
             <Button Style="{StaticResource MDCircleButton}" Width="50" Height="50" Background="Purple">
-                C
+                1
             </Button>
         </StackPanel>
     </Grid>

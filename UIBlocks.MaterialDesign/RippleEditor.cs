@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace UIBlocks.MaterialDesign
 {
-    //静态类，定义各种附加属性用来表达波纹效果的状态
+    //静态类，定义各种附加属性用来表达波纹效果的状态。
     public static class RippleEditor
     {
         public static bool GetIsInCenter(DependencyObject obj)
@@ -19,7 +19,7 @@ namespace UIBlocks.MaterialDesign
         {
             obj.SetValue(IsInCenterProperty, value);
         }
-        // 附加属性，设置波纹效果是否从控件中心产生，如果为false则从鼠标点击位置产生
+        // 附加属性，设置波纹效果是否从控件中心产生，如果为false则从鼠标点击位置产生。
         public static readonly DependencyProperty IsInCenterProperty =
             DependencyProperty.RegisterAttached("IsInCenter", typeof(bool), typeof(RippleEditor), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
 
@@ -32,7 +32,7 @@ namespace UIBlocks.MaterialDesign
         {
             obj.SetValue(EnableProperty, value);
         }
-        //附加属性，设置波纹效果是否被开启 
+        //附加属性，设置波纹效果是否被开启 。
         public static readonly DependencyProperty EnableProperty =
             DependencyProperty.RegisterAttached("Enable", typeof(bool), typeof(RippleEditor), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.Inherits));
     }

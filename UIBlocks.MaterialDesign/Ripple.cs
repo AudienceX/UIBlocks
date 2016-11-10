@@ -72,7 +72,7 @@ namespace UIBlocks.MaterialDesign
         }
 
 
-        //鼠标释放，结束波纹动画
+        //鼠标释放，加速结束波纹动画
         private static void MouseUpHandler(object sender, MouseEventArgs e)
         {
             foreach (var i in instance)
@@ -128,7 +128,7 @@ namespace UIBlocks.MaterialDesign
             size = 2 * radius * 1.0;
         }
 
-        //鼠标单击，开始波纹动画
+        //鼠标单击，开始波纹动画。
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             var point = e.GetPosition(this);

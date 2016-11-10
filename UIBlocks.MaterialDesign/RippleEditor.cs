@@ -8,6 +8,7 @@ using System.Windows.Media;
 
 namespace UIBlocks.MaterialDesign
 {
+    //静态类，定义各种附加属性用来表达波纹效果的状态
     public static class RippleEditor
     {
         public static bool GetIsInCenter(DependencyObject obj)

@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Themes"
                     xmlns:lib="clr-namespace:UIBlocks.MaterialDesign">
+    <!--控件获取焦点的状态/-->
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
@@ -11,6 +12,8 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!--设置圆形按钮样式/-->
     <Style x:Key="MDCircleButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>

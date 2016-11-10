@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 namespace UIBlocks.MaterialDesign
 {
+    //产生波纹的类，继承自ContentControl，使用时当一般的ContenControl加入控件模板中即可，如何控制具体状态（如是否从中心发出、关闭等）可由静态类RippleEditor设置附加属性定义。
     public class Ripple : ContentControl
     {
         private static readonly HashSet<Ripple> instance = new HashSet<Ripple>();
@@ -55,18 +56,23 @@ namespace UIBlocks.MaterialDesign
             DependencyProperty.Register("size", typeof(double), typeof(Ripple), new PropertyMetadata(default(double)));
         #endregion
 
+        //静态初始化类，注册鼠标释放事件。
         static Ripple()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Ripple), new FrameworkPropertyMetadata(typeof(Ripple)));
             EventManager.RegisterClassHandler(typeof(ContentControl), Mouse.PreviewMouseUpEvent, new MouseButtonEventHandler(MouseUpHandler), true);
         }
 
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+            //设置初始状态
             VisualStateManager.GoToState(this, "normal", false);
         }
 
+
+        //鼠标释放，结束波纹动画
         private static void MouseUpHandler(object sender, MouseEventArgs e)
         {
             foreach (var i in instance)
@@ -99,6 +105,7 @@ namespace UIBlocks.MaterialDesign
             SizeChanged += OnSizeChanged;
         }
 
+        //计算波纹大小
         private void OnSizeChanged(object sender, SizeChangedEventArgs sizeChangedEventArgs)
         {
             var innerContent = (Content as FrameworkElement);
@@ -121,6 +128,7 @@ namespace UIBlocks.MaterialDesign
             size = 2 * radius * 1.0;
         }
 
+        //鼠标单击，开始波纹动画
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             var point = e.GetPosition(this);

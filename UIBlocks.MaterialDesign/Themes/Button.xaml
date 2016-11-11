@@ -1,7 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Themes"
-                    xmlns:lib="clr-namespace:UIBlocks.MaterialDesign">
+                    xmlns:lib="clr-namespace:UIBlocks.MaterialDesign"
+                    xmlns:converters="clr-namespace:UIBlocks.MaterialDesign.Converters">
+    <!--引用阴影效果资源字典-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Shadow.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <!--控件获取焦点的状态/-->
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
@@ -15,6 +21,7 @@
 
     <!--设置圆形按钮样式。/-->
     <Style x:Key="MDCircleButton" TargetType="{x:Type Button}">
+        <Setter Property="lib:ShadowEditor.ShadowDepth" Value="Depth2" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="Purple"/>
@@ -32,22 +39,30 @@
                             <AdornerDecorator.CacheMode>
                                 <BitmapCache EnableClearType="True" SnapsToDevicePixels="True"/>
                             </AdornerDecorator.CacheMode>
-                            <Border>
-                                <Border.Effect>
-                                    <DropShadowEffect ShadowDepth="2" BlurRadius="5" />
-                                </Border.Effect>
-                                <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}"
+                            <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}"
+                                     Effect="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(lib:ShadowEditor.ShadowDepth), Converter={x:Static converters:ShadowConverter.Instance}}"
                                      x:Name="border">
-                                </Ellipse>
-                            </Border>
+                            </Ellipse>
                         </AdornerDecorator>
                         <lib:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Padding="{TemplateBinding Padding}" 
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                   
                                     />
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="lib:ShadowEditor.Darken" Value="True" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.23"/>
+                        </Trigger>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter Property="Stroke" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

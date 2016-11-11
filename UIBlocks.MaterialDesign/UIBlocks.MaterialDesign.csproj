@@ -48,7 +48,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\ShadowConverters.cs" />
     <Compile Include="RippleEditor.cs" />
+    <Compile Include="ShadowEditor.cs" />
     <Page Include="Themes\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -60,6 +62,10 @@
     <Compile Include="Ripple.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Shadow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

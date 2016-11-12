@@ -6,6 +6,7 @@
     <!--引用阴影效果资源字典-->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Shadow.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Colors/Purple.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
     <!--控件获取焦点的状态/-->
@@ -24,13 +25,12 @@
         <Setter Property="lib:ShadowEditor.ShadowDepth" Value="Depth2" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Background" Value="Purple"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Width" Value="40"/>
-        <Setter Property="Foreground" Value="White" />
+  
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -49,8 +49,9 @@
                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Padding="{TemplateBinding Padding}" 
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                                   
+                                    Clip="{Binding ElementName=GeometryEllipse, Path=RenderedGeometry}" ClipToBounds="True"
                                     />
+                                    <Ellipse x:Name="GeometryEllipse" Fill="Transparent" IsHitTestVisible="False" Focusable="False" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -66,5 +67,17 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    <Style x:Key="MDCirclebutton_LightPurple" TargetType="Button" BasedOn="{StaticResource MDCircleButton}">
+        <Setter Property="Background" Value="{DynamicResource Purple200Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Pueple200ForegroundBrush}" />
+    </Style>
+    <Style x:Key="MDCirclebutton_MidPurple" TargetType="Button" BasedOn="{StaticResource MDCircleButton}">
+        <Setter Property="Background" Value="{DynamicResource Purple500Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Purple500ForegroundBrush}" />
+    </Style>
+    <Style x:Key="MDCirclebutton_DarkPurple" TargetType="Button" BasedOn="{StaticResource MDCircleButton}">
+        <Setter Property="Background" Value="{DynamicResource Purple700Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Purple700ForegroundBrush}" />
     </Style>
 </ResourceDictionary>

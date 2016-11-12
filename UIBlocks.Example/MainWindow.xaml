@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UIBlocks.Example"
         mc:Ignorable="d"
-        Title="各种控件的例子 Example" Height="350" Width="525">
+        Title="各种控件的例子 Example" Height="800" Width="1000">
     <Grid>
-        <StackPanel>
-            <Button Style="{StaticResource MDCircleButton}" Width="50" Height="50" Background="Purple">
-                1
-            </Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource MDCirclebutton_LightPurple}" Width="50" Height="50" Content="L" />
+            <Button Style="{StaticResource MDCirclebutton_MidPurple}" Width="50" Height="50" Content="L" />
+            <Button Style="{StaticResource MDCirclebutton_DarkPurple}" Width="50" Height="50" Content="L" />
         </StackPanel>
     </Grid>
 </Window>

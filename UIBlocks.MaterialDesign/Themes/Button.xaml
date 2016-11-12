@@ -70,14 +70,83 @@
     </Style>
     <Style x:Key="MDCirclebutton_LightPurple" TargetType="Button" BasedOn="{StaticResource MDCircleButton}">
         <Setter Property="Background" Value="{DynamicResource Purple200Brush}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Pueple200ForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Purple200Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Purple200ForegroundBrush}" />
     </Style>
     <Style x:Key="MDCirclebutton_MidPurple" TargetType="Button" BasedOn="{StaticResource MDCircleButton}">
         <Setter Property="Background" Value="{DynamicResource Purple500Brush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Purple500Brush}"/>
         <Setter Property="Foreground" Value="{DynamicResource Purple500ForegroundBrush}" />
     </Style>
     <Style x:Key="MDCirclebutton_DarkPurple" TargetType="Button" BasedOn="{StaticResource MDCircleButton}">
         <Setter Property="Background" Value="{DynamicResource Purple700Brush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Purple700Brush}"/>
         <Setter Property="Foreground" Value="{DynamicResource Purple700ForegroundBrush}" />
     </Style>
+    
+    <!--设置方形按钮样式-->
+    <Style TargetType="Button" x:Key="MDSquareButton">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="lib:ShadowEditor.ShadowDepth" Value="Depth1" />
+        <Setter Property="TextBlock.FontWeight" Value="Medium"/>
+        <Setter Property="TextBlock.FontSize" Value="14"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="16 4 16 4"/>
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Grid>
+                        <AdornerDecorator>
+                            <AdornerDecorator.CacheMode>
+                                <BitmapCache EnableClearType="True" SnapsToDevicePixels="True"/>
+                            </AdornerDecorator.CacheMode>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="2"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    x:Name="border"
+                                    Effect="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(lib:ShadowEditor.ShadowDepth), Converter={x:Static converters:ShadowConverter.Instance}}">
+                            </Border>
+                        </AdornerDecorator>
+                        <lib:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"     
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Padding="{TemplateBinding Padding}" 
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                    Clip="{Binding ElementName=GeometrySquare, Path=RenderedGeometry}" ClipToBounds="True"/>
+                                    <Rectangle x:Name="GeometrySquare" Fill="Transparent" IsHitTestVisible="False" Focusable="False" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="lib:ShadowEditor.Darken" Value="True" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.23"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Button" BasedOn="{StaticResource MDSquareButton}" x:Key="MDSquareButton_LightPurple">
+        <Setter Property="Background" Value="{DynamicResource Purple200Brush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Purple200Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Purple200ForegroundBrush}" />
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource MDSquareButton}" x:Key="MDSquareButton_MidPurple">
+        <Setter Property="Background" Value="{DynamicResource Purple500Brush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Purple500Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Purple500ForegroundBrush}" />
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource MDSquareButton}" x:Key="MDSquareButton_DarkPurple">
+        <Setter Property="Background" Value="{DynamicResource Purple700Brush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Purple700Brush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Purple700ForegroundBrush}" />
+    </Style>
+
 </ResourceDictionary>

@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Colors">
+                    xmlns:local="clr-namespace:UIBlocks.MaterialDesign">
     <Color x:Key="Purple50">#f3e5f5</Color>
     <Color x:Key="Purple50Foreground">#DD000000</Color>
     <Color x:Key="Purple100">#e1bee7</Color>
@@ -23,7 +23,7 @@
     <Color x:Key="Purple900Foreground">#DDFFFFFF</Color>
 
     <SolidColorBrush x:Key="Purple200Brush" Color="{StaticResource Purple200}" />
-    <SolidColorBrush x:Key="Pueple200ForegroundBrush" Color="{StaticResource Purple200Foreground}"  />
+    <SolidColorBrush x:Key="Purple200ForegroundBrush" Color="{StaticResource Purple200Foreground}"  />
     <SolidColorBrush x:Key="Purple500Brush" Color="{StaticResource Purple500}" />
     <SolidColorBrush x:Key="Purple500ForegroundBrush" Color="{StaticResource Purple500Foreground}" />
     <SolidColorBrush x:Key="Purple700Brush" Color="{StaticResource Purple700}"  />

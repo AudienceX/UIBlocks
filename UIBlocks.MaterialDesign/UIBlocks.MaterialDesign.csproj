@@ -51,6 +51,11 @@
     <Compile Include="Converters\ShadowConverters.cs" />
     <Compile Include="RippleEditor.cs" />
     <Compile Include="ShadowEditor.cs" />
+    <Compile Include="UnderLine.cs" />
+    <Page Include="Colors\LightThemeColor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Colors\Purple.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -67,6 +72,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Themes\Shadow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

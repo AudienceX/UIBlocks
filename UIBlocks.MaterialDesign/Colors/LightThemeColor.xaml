@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Colors">
+
+    <Color x:Key="ErrorColor">#f44336</Color>
+    <SolidColorBrush x:Key="ValidationErrorBrush" Color="{StaticResource ErrorColor}"  />
+
+    <SolidColorBrush x:Key="MDBackground" Color="#FFFFFFFF"  />
+    <SolidColorBrush x:Key="MDPaper" Color="#FFfafafa"  />
+    <SolidColorBrush x:Key="MDBody" Color="#DD000000" />
+    <SolidColorBrush x:Key="MDBodyLight" Color="#89000000"/>
+    <SolidColorBrush x:Key="MDeColumnHeader" Color="#BC000000"  />
+
+    <SolidColorBrush x:Key="MDCheckBoxOff" Color="#89000000" />
+    <SolidColorBrush x:Key="MDCheckBoxDisabled" Color="#FFBDBDBD" />
+
+    <SolidColorBrush x:Key="MDTextBoxBorder" Color="#89000000" />
+    <SolidColorBrush x:Key="MDDivider" Color="#1F000000"  />
+    
+    <SolidColorBrush x:Key="MDSelection" Color="#FFDeDeDe"  />
+
+
+    <SolidColorBrush x:Key="MDToolTipBackground" Color="#757575"  />
+
+    <SolidColorBrush x:Key="MDChipBackground" Color="#12000000" />
+
+
+</ResourceDictionary>

@@ -104,4 +104,74 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type local:UnderLine}">
+        <Setter Property="Background" Value="{DynamicResource Purple500Brush}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Height" Value="2"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ControlTemplate.Resources>
+                        <CircleEase x:Key="UnderlineEasingFunction" EasingMode="EaseOut"/>
+                    </ControlTemplate.Resources>
+                    <Border x:Name="UnderlineBorder"
+                            Background="{TemplateBinding Background}"
+                            IsHitTestVisible="False"
+                            Height="{TemplateBinding Height}"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            RenderTransformOrigin="0.5,0.5">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ActivationStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="inactive" To="active">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             Duration="0:0:0.3"
+                                                             EasingFunction="{StaticResource UnderlineEasingFunction}"
+                                                             To="1"/>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition From="active" To="inactive">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             Duration="0:0:0.3"
+                                                             EasingFunction="{StaticResource UnderlineEasingFunction}"
+                                                             To="0"/>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="active">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                                         Storyboard.TargetProperty="ScaleX"
+                                                         Duration="0"
+                                                         To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="inactive">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                                         Storyboard.TargetProperty="ScaleX"
+                                                         Duration="0"
+                                                         To="0"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="1" x:Name="ScaleTransform" />
+                        </Border.RenderTransform>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

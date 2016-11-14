@@ -6,7 +6,7 @@
     <!--引用阴影效果资源字典-->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Shadow.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Colors/Purple.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Colors/ColorRoot.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
     <!--控件获取焦点的状态/-->

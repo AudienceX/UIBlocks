@@ -15,16 +15,23 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button Style="{StaticResource MDCirclebutton_LightPurple}" Width="50" Height="50" Content="L"/>
-            <Button Style="{StaticResource MDCirclebutton_MidPurple}" Width="60" Height="60" Content="M" />
-            <Button Style="{StaticResource MDCirclebutton_DarkPurple}" Width="70" Height="70" Content="D" />
+            <Button Style="{StaticResource MDCirclebutton_LightPurple}" Width="50" Height="50" Content="L" />
+            <Button Style="{StaticResource MDCirclebutton_MidPurple}" Width="60" Height="60" Content="M" MaterialDesign:RippleEditor.IsInCenter="True"/>
+            <Button Style="{StaticResource MDCirclebutton_DarkPurple}" Width="70" Height="70" Content="D" MaterialDesign:ShadowEditor.ShadowDepth="Depth4" />
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Style="{StaticResource MDSquareButton_LightPurple}" Height="30" Width="80" Content="L"/>
-            <Button Style="{StaticResource MDSquareButton_MidPurple}" Height="40" Width="100" Content="M" />
-            <Button Style="{StaticResource MDSquareButton_DarkPurple}" Height="50" Width="120" Content="D"/>
-           
-            
+            <Button Style="{StaticResource MDSquareButton}" Height="30" Width="80" Content="L"
+                    Background="{StaticResource Orange500Brush}"
+                    Foreground="{StaticResource Orange500ForegroundBrush}"
+                    BorderBrush="{StaticResource Orange500Brush}"/>
+            <Button Style="{StaticResource MDSquareButton}" Height="40" Width="100" Content="M"
+                    Background="{StaticResource Red500Brush}"
+                    Foreground="{StaticResource Red500ForegroundBrush}"
+                    BorderBrush="{StaticResource Red500Brush}"/>
+            <Button Style="{StaticResource MDSquareButton}" Height="50" Width="120" Content="D" 
+                    Background="{StaticResource Cyan200Brush}"
+                    Foreground="{StaticResource Cyan200ForegroundBrush}"
+                    BorderBrush="{StaticResource Cyan200Brush}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBox Style="{StaticResource MDTextBox}" Width="100"/>

@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Colors/ColorRoot.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

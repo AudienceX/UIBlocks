@@ -35,14 +35,11 @@ namespace UIBlocks.MaterialDesign
         {
             if(val)
             {
-                bool ans=VisualStateManager.GoToState(this, "active", true);
-                
-                Console.WriteLine(ans.ToString());
+                VisualStateManager.GoToState(this, "active", true);
             }
             else
             {
-                bool ans=VisualStateManager.GoToState(this, "inactive", true);
-                Console.WriteLine(ans.ToString()+"fffff");
+                VisualStateManager.GoToState(this, "inactive", true);
             }
         }
 

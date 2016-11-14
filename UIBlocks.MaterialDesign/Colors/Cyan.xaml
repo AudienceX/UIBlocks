@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Colors">
+    <Color x:Key="Cyan50">#e0f7fa</Color>
+    <Color x:Key="Cyan50Foreground">#DD000000</Color>
+    <Color x:Key="Cyan100">#b2ebf2</Color>
+    <Color x:Key="Cyan100Foreground">#DD000000</Color>
+    <Color x:Key="Cyan200">#80deea</Color>
+    <Color x:Key="Cyan200Foreground">#DD000000</Color>
+    <Color x:Key="Cyan300">#4dd0e1</Color>
+    <Color x:Key="Cyan300Foreground">#DD000000</Color>
+    <Color x:Key="Cyan400">#26c6da</Color>
+    <Color x:Key="Cyan400Foreground">#DD000000</Color>
+    <Color x:Key="Cyan500">#00bcd4</Color>
+    <Color x:Key="Cyan500Foreground">#DD000000</Color>
+    <Color x:Key="Cyan600">#00acc1</Color>
+    <Color x:Key="Cyan600Foreground">#DD000000</Color>
+    <Color x:Key="Cyan700">#0097a7</Color>
+    <Color x:Key="Cyan700Foreground">#DDFFFFFF</Color>
+    <Color x:Key="Cyan800">#00838f</Color>
+    <Color x:Key="Cyan800Foreground">#DDFFFFFF</Color>
+    <Color x:Key="Cyan900">#006064</Color>
+    <Color x:Key="Cyan900Foreground">#DDFFFFFF</Color>
+
+    <SolidColorBrush x:Key="Cyan200Brush" Color="{StaticResource Cyan200}" />
+    <SolidColorBrush x:Key="Cyan200ForegroundBrush" Color="{StaticResource Cyan200Foreground}"  />
+    <SolidColorBrush x:Key="Cyan500Brush" Color="{StaticResource Cyan500}" />
+    <SolidColorBrush x:Key="Cyan500ForegroundBrush" Color="{StaticResource Cyan500Foreground}" />
+    <SolidColorBrush x:Key="Cyan700Brush" Color="{StaticResource Cyan700}"  />
+    <SolidColorBrush x:Key="Cyan700ForegroundBrush" Color="{StaticResource Cyan100Foreground}" />
+
+
+</ResourceDictionary>

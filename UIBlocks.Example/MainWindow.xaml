@@ -32,6 +32,7 @@
                     Background="{StaticResource Cyan200Brush}"
                     Foreground="{StaticResource Cyan200ForegroundBrush}"
                     BorderBrush="{StaticResource Cyan200Brush}"/>
+            <ToggleButton Style="{StaticResource MDSwithToggleButton}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBox Style="{StaticResource MDTextBox}" Width="100"/>

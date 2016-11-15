@@ -32,7 +32,11 @@
                     Background="{StaticResource Cyan200Brush}"
                     Foreground="{StaticResource Cyan200ForegroundBrush}"
                     BorderBrush="{StaticResource Cyan200Brush}"/>
-            <ToggleButton Style="{StaticResource MDSwithToggleButton}"/>
+            <StackPanel Margin="10" >
+                <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5"/>
+                <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" IsChecked="True"/>
+                <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" IsEnabled="False" />
+            </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBox Style="{StaticResource MDTextBox}" Width="100"/>

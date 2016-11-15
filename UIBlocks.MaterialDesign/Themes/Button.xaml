@@ -354,7 +354,7 @@
                             <Grid x:Name="ThumbHolder"
                                   HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Ellipse x:Name="RippleThumb"
-                                         Fill="{DynamicResource Purple500ForeGroundBrush}"
+                                         Fill="{DynamicResource Purple200Brush}"
                                          Height="25" Width="25"
                                          Opacity="0.26"
                                          Margin="0"
@@ -374,7 +374,7 @@
                                              Width="25" Height="25"
                                              Margin="0,0,0,0"
                                              RenderTransformOrigin="0.5,0.5"
-                                             Effect="{DynamicResource ShadowDepth1}">
+                                             Effect="{DynamicResource ShadowDepth3}">
                                     </Ellipse>
                                 </AdornerDecorator>
                                 <Grid.RenderTransform>

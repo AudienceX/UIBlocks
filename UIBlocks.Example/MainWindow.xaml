@@ -20,6 +20,7 @@
             <Button Style="{StaticResource MDCirclebutton_DarkPurple}" Width="70" Height="70" Content="D" MaterialDesign:ShadowEditor.ShadowDepth="Depth4" />
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Style="{StaticResource MDFlatButton}" Content="Accept" />
             <Button Style="{StaticResource MDSquareButton}" Height="30" Width="80" Content="L"
                     Background="{StaticResource Orange500Brush}"
                     Foreground="{StaticResource Orange500ForegroundBrush}"

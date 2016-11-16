@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:UIBlocks.Example"
         xmlns:MaterialDesign="clr-namespace:UIBlocks.MaterialDesign;assembly=UIBlocks.MaterialDesign" x:Class="UIBlocks.Example.MainWindow"
         mc:Ignorable="d"
-        Title="各种控件的例子 Example" Height="800" Width="1000">
-    <Grid>
+        Title="各种控件的例子 Example" Height="800" Width="1000" >
+    <Grid Background="{StaticResource MDBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -41,6 +41,18 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBox Style="{StaticResource MDTextBox}" Width="100"/>
+            <MaterialDesign:Card  Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Some text" Grid.Row="0" Height="100" VerticalAlignment="Top"/>
+                    <TextBlock Text="SSSSSSSSSS" Grid.Row="1"/>
+                    <Button Style="{StaticResource MDCirclebutton_MidPurple}" Content="A" IsEnabled="True" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Grid.Row="0" Margin="0,0,4,0"/>
+                </Grid>
+            </MaterialDesign:Card>
         </StackPanel>
     </Grid>
 </Window>

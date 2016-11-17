@@ -3,16 +3,17 @@
                     xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Themes"
                     xmlns:converters="clr-namespace:UIBlocks.MaterialDesign.Converters"
                     xmlns:lib="clr-namespace:UIBlocks.MaterialDesign">
-    <converters:CardClipConverter x:Key="CardClipConverter"/>
+    <converters:CardClipConverter x:Key="CardClipConverter" />
     <ControlTemplate TargetType="{x:Type lib:Card}" x:Key="CardTemplate">
         <Grid Margin="{TemplateBinding Margin}" Background="Transparent">
             <AdornerDecorator>
                 <AdornerDecorator.CacheMode>
-                    <BitmapCache EnableClearType="True" SnapsToDevicePixels="True"/>
+                    <BitmapCache EnableClearType="True" SnapsToDevicePixels="True" />
                 </AdornerDecorator.CacheMode>
-                <Border Effect="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(lib:ShadowEditor.ShadowDepth), Converter={x:Static converters:ShadowConverter.Instance}}"
-                        CornerRadius="{TemplateBinding Cornerradius}">
-                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" 
+                <Border
+                    Effect="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(lib:ShadowEditor.ShadowDepth), Converter={x:Static converters:ShadowConverter.Instance}}"
+                    CornerRadius="{TemplateBinding Cornerradius}">
+                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
                             x:Name="ClipBorder"
                             Clip="{TemplateBinding ClipContent}" />
                 </Border>
@@ -23,9 +24,8 @@
                 Clip="{TemplateBinding ClipContent}"
                 Content="{TemplateBinding ContentControl.Content}"
                 ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
-                ContentTemplateSelector="{TemplateBinding ContentControl.ContentTemplateSelector}" 
-                ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}">
-            </ContentPresenter>
+                ContentTemplateSelector="{TemplateBinding ContentControl.ContentTemplateSelector}"
+                ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" />
         </Grid>
     </ControlTemplate>
     <Style TargetType="{x:Type lib:Card}">

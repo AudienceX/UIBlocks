@@ -51,6 +51,7 @@
     <Compile Include="Card.cs" />
     <Compile Include="Converters\CardClipConverter.cs" />
     <Compile Include="Converters\ShadowConverters.cs" />
+    <Compile Include="PopupBox.cs" />
     <Compile Include="RippleEditor.cs" />
     <Compile Include="ShadowEditor.cs" />
     <Compile Include="UnderLine.cs" />

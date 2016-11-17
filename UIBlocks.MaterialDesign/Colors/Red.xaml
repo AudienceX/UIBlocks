@@ -23,10 +23,10 @@
     <Color x:Key="Red900Foreground">#DDFFFFFF</Color>
 
     <SolidColorBrush x:Key="Red200Brush" Color="{StaticResource Red200}" />
-    <SolidColorBrush x:Key="Red200ForegroundBrush" Color="{StaticResource Red200Foreground}"  />
+    <SolidColorBrush x:Key="Red200ForegroundBrush" Color="{StaticResource Red200Foreground}" />
     <SolidColorBrush x:Key="Red500Brush" Color="{StaticResource Red500}" />
     <SolidColorBrush x:Key="Red500ForegroundBrush" Color="{StaticResource Red500Foreground}" />
-    <SolidColorBrush x:Key="Red700Brush" Color="{StaticResource Red700}"  />
+    <SolidColorBrush x:Key="Red700Brush" Color="{StaticResource Red700}" />
     <SolidColorBrush x:Key="Red700ForegroundBrush" Color="{StaticResource Red100Foreground}" />
 
 </ResourceDictionary>

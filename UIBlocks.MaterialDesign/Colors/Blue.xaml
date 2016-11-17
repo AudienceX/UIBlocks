@@ -23,10 +23,10 @@
     <Color x:Key="Blue900Foreground">#DDFFFFFF</Color>
 
     <SolidColorBrush x:Key="Blue200Brush" Color="{StaticResource Blue200}" />
-    <SolidColorBrush x:Key="Blue200ForegroundBrush" Color="{StaticResource Blue200Foreground}"  />
+    <SolidColorBrush x:Key="Blue200ForegroundBrush" Color="{StaticResource Blue200Foreground}" />
     <SolidColorBrush x:Key="Blue500Brush" Color="{StaticResource Blue500}" />
     <SolidColorBrush x:Key="Blue500ForegroundBrush" Color="{StaticResource Blue500Foreground}" />
-    <SolidColorBrush x:Key="Blue700Brush" Color="{StaticResource Blue700}"  />
+    <SolidColorBrush x:Key="Blue700Brush" Color="{StaticResource Blue700}" />
     <SolidColorBrush x:Key="Blue700ForegroundBrush" Color="{StaticResource Blue100Foreground}" />
 
 </ResourceDictionary>

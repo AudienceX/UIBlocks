@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace UIBlocks.MaterialDesign
 {
-    public class Card:ContentControl
+    public class Card : ContentControl
     {
         private Border clipborder;
+
         static Card()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Card), new FrameworkPropertyMetadata(typeof(Card)));
@@ -33,7 +30,7 @@ namespace UIBlocks.MaterialDesign
             var farPoint = new Point(
                 Math.Max(0, clipborder.ActualWidth),
                 Math.Max(0, clipborder.ActualHeight));
-        
+
             var clipRect = new Rect(
                 new Point(),
                 new Point(farPoint.X, farPoint.Y));
@@ -42,25 +39,31 @@ namespace UIBlocks.MaterialDesign
         }
 
         #region 依赖属性CornerRadius，卡片圆角
+
         public double Cornerradius
         {
-            get { return (double)GetValue(CornerradiusProperty); }
+            get { return (double) GetValue(CornerradiusProperty); }
             set { SetValue(CornerradiusProperty, value); }
         }
+
         public static readonly DependencyProperty CornerradiusProperty =
-            DependencyProperty.RegisterAttached("Cornerradius", typeof(double), typeof(Card), new FrameworkPropertyMetadata(2.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.RegisterAttached("Cornerradius", typeof(double), typeof(Card),
+                new FrameworkPropertyMetadata(2.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
         #endregion
 
         #region ClipContent依赖属性，卡牌内容形状
+
         public Geometry ClipContent
         {
-            get { return (Geometry)GetValue(ClipContentProperty); }
+            get { return (Geometry) GetValue(ClipContentProperty); }
             set { SetValue(ClipContentProperty, value); }
         }
-        public static readonly DependencyProperty ClipContentProperty =
-            DependencyProperty.RegisterAttached("ClipContent", typeof(Geometry), typeof(Card), new PropertyMetadata(default(Geometry)));
-        #endregion
 
+        public static readonly DependencyProperty ClipContentProperty =
+            DependencyProperty.RegisterAttached("ClipContent", typeof(Geometry), typeof(Card),
+                new PropertyMetadata(default(Geometry)));
+
+        #endregion
     }
 }
-    

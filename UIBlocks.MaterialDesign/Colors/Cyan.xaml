@@ -23,10 +23,10 @@
     <Color x:Key="Cyan900Foreground">#DDFFFFFF</Color>
 
     <SolidColorBrush x:Key="Cyan200Brush" Color="{StaticResource Cyan200}" />
-    <SolidColorBrush x:Key="Cyan200ForegroundBrush" Color="{StaticResource Cyan200Foreground}"  />
+    <SolidColorBrush x:Key="Cyan200ForegroundBrush" Color="{StaticResource Cyan200Foreground}" />
     <SolidColorBrush x:Key="Cyan500Brush" Color="{StaticResource Cyan500}" />
     <SolidColorBrush x:Key="Cyan500ForegroundBrush" Color="{StaticResource Cyan500Foreground}" />
-    <SolidColorBrush x:Key="Cyan700Brush" Color="{StaticResource Cyan700}"  />
+    <SolidColorBrush x:Key="Cyan700Brush" Color="{StaticResource Cyan700}" />
     <SolidColorBrush x:Key="Cyan700ForegroundBrush" Color="{StaticResource Cyan100Foreground}" />
 
 

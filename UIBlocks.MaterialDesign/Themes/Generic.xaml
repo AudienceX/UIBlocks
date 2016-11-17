@@ -3,10 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:UIBlocks.MaterialDesign">
     <Style TargetType="{x:Type local:Ripple}">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Ripple}">
@@ -16,43 +16,49 @@
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition From="normal" To="click">
                                         <Storyboard>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="scaletransform" Storyboard.TargetProperty="ScaleX">
-                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="scaletransform"
+                                                                           Storyboard.TargetProperty="ScaleX">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
                                                 <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1">
                                                     <EasingDoubleKeyFrame.EasingFunction>
-                                                        <SineEase EasingMode="EaseIn"/>
+                                                        <SineEase EasingMode="EaseIn" />
                                                     </EasingDoubleKeyFrame.EasingFunction>
                                                 </EasingDoubleKeyFrame>
                                             </DoubleAnimationUsingKeyFrames>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="scaletransform" Storyboard.TargetProperty="ScaleY">
-                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="scaletransform"
+                                                                           Storyboard.TargetProperty="ScaleY">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
                                                 <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1">
                                                     <EasingDoubleKeyFrame.EasingFunction>
-                                                        <SineEase EasingMode="EaseIn"/>
+                                                        <SineEase EasingMode="EaseIn" />
                                                     </EasingDoubleKeyFrame.EasingFunction>
                                                 </EasingDoubleKeyFrame>
                                             </DoubleAnimationUsingKeyFrames>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ellipse">
-                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value=".25"/>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity"
+                                                                           Storyboard.TargetName="ellipse">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value=".25" />
                                             </DoubleAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualTransition>
                                     <VisualTransition From="click" To="normal">
                                         <Storyboard>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="scaletransform">
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.30" Value="1" x:Name="xkeyframe"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="1"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="0"/>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="ScaleX"
+                                                                           Storyboard.TargetName="scaletransform">
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.30" Value="1" x:Name="xkeyframe" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="1" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="0" />
                                             </DoubleAnimationUsingKeyFrames>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="scaletransform">
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.30" Value="1" x:Name="ykeyframe"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="1"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="0"/>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="ScaleY"
+                                                                           Storyboard.TargetName="scaletransform">
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.30" Value="1" x:Name="ykeyframe" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="1" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="0" />
                                             </DoubleAnimationUsingKeyFrames>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ellipse">
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value=".26"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:0.30" Value=".26"/>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity"
+                                                                           Storyboard.TargetName="ellipse">
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value=".26" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.30" Value=".26" />
                                                 <EasingDoubleKeyFrame KeyTime="0:0:0.50" Value="0">
                                                     <EasingDoubleKeyFrame.EasingFunction>
                                                         <SineEase EasingMode="EaseOut" />
@@ -64,34 +70,40 @@
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="normal">
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="scaletransform" Storyboard.TargetProperty="ScaleX" To="0"/>
-                                        <DoubleAnimation Storyboard.TargetName="scaletransform" Storyboard.TargetProperty="ScaleY" To="0"/>
-                                        <DoubleAnimation Storyboard.TargetName="ellipse" Storyboard.TargetProperty="Opacity" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaletransform"
+                                                         Storyboard.TargetProperty="ScaleX" To="0" />
+                                        <DoubleAnimation Storyboard.TargetName="scaletransform"
+                                                         Storyboard.TargetProperty="ScaleY" To="0" />
+                                        <DoubleAnimation Storyboard.TargetName="ellipse"
+                                                         Storyboard.TargetProperty="Opacity" To="0" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="click">
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="scaletransform" Storyboard.TargetProperty="ScaleX" To="1"/>
-                                        <DoubleAnimation Storyboard.TargetName="scaletransform" Storyboard.TargetProperty="ScaleY" To="1"/>
-                                        <DoubleAnimation Storyboard.TargetName="ellipse" Storyboard.TargetProperty="Opacity" To="0.25"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaletransform"
+                                                         Storyboard.TargetProperty="ScaleX" To="1" />
+                                        <DoubleAnimation Storyboard.TargetName="scaletransform"
+                                                         Storyboard.TargetProperty="ScaleY" To="1" />
+                                        <DoubleAnimation Storyboard.TargetName="ellipse"
+                                                         Storyboard.TargetProperty="Opacity" To="0.25" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Canvas IsHitTestVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Ellipse x:Name="ellipse"  Opacity="0"
-                                 Fill="White"
-                                 Width="{Binding RelativeSource={RelativeSource TemplatedParent},Path=size}"
-                                 Height="{Binding RelativeSource={RelativeSource TemplatedParent},Path=size}"
-                                 Canvas.Left="{Binding RelativeSource={RelativeSource TemplatedParent},Path=X}"
-                                 Canvas.Top="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Y}"
-                                 RenderTransformOrigin=".5,.5">
+                            <Ellipse x:Name="ellipse" Opacity="0"
+                                     Fill="White"
+                                     Width="{Binding RelativeSource={RelativeSource TemplatedParent},Path=size}"
+                                     Height="{Binding RelativeSource={RelativeSource TemplatedParent},Path=size}"
+                                     Canvas.Left="{Binding RelativeSource={RelativeSource TemplatedParent},Path=X}"
+                                     Canvas.Top="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Y}"
+                                     RenderTransformOrigin=".5,.5">
                                 <Ellipse.RenderTransform>
-                                    <ScaleTransform x:Name="scaletransform" ScaleX="0" ScaleY="0"/>
+                                    <ScaleTransform x:Name="scaletransform" ScaleX="0" ScaleY="0" />
                                 </Ellipse.RenderTransform>
                             </Ellipse>
                         </Canvas>
-                        <ContentPresenter Content="{TemplateBinding Content}" 
+                        <ContentPresenter Content="{TemplateBinding Content}"
                                           ContentStringFormat="{TemplateBinding ContentStringFormat}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
                                           ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
@@ -106,17 +118,17 @@
     </Style>
 
     <Style TargetType="{x:Type local:UnderLine}">
-        <Setter Property="Background" Value="{DynamicResource Purple500Brush}"/>
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Bottom"/>
-        <Setter Property="Height" Value="2"/>
-        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Background" Value="{DynamicResource Purple500Brush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Height" Value="2" />
+        <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
                     <ControlTemplate.Resources>
-                        <CircleEase x:Key="UnderlineEasingFunction" EasingMode="EaseOut"/>
+                        <CircleEase x:Key="UnderlineEasingFunction" EasingMode="EaseOut" />
                     </ControlTemplate.Resources>
                     <Border x:Name="UnderlineBorder"
                             Background="{TemplateBinding Background}"
@@ -135,7 +147,7 @@
                                                              Storyboard.TargetProperty="ScaleX"
                                                              Duration="0:0:0.3"
                                                              EasingFunction="{StaticResource UnderlineEasingFunction}"
-                                                             To="1"/>
+                                                             To="1" />
                                         </Storyboard>
                                     </VisualTransition>
                                     <VisualTransition From="active" To="inactive">
@@ -144,7 +156,7 @@
                                                              Storyboard.TargetProperty="ScaleX"
                                                              Duration="0:0:0.3"
                                                              EasingFunction="{StaticResource UnderlineEasingFunction}"
-                                                             To="0"/>
+                                                             To="0" />
                                         </Storyboard>
                                     </VisualTransition>
                                 </VisualStateGroup.Transitions>
@@ -153,7 +165,7 @@
                                         <DoubleAnimation Storyboard.TargetName="ScaleTransform"
                                                          Storyboard.TargetProperty="ScaleX"
                                                          Duration="0"
-                                                         To="1"/>
+                                                         To="1" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="inactive">
@@ -161,7 +173,7 @@
                                         <DoubleAnimation Storyboard.TargetName="ScaleTransform"
                                                          Storyboard.TargetProperty="ScaleX"
                                                          Duration="0"
-                                                         To="0"/>
+                                                         To="0" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>

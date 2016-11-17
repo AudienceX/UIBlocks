@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Effects;
@@ -17,16 +14,21 @@ namespace UIBlocks.MaterialDesign.Converters
 
         static ShadowConverter()
         {
-            var resourceDictionary = new ResourceDictionary { Source = new Uri("pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Shadow.xaml", UriKind.Absolute) };
-            
+            var resourceDictionary = new ResourceDictionary
+            {
+                Source =
+                    new Uri("pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Shadow.xaml",
+                        UriKind.Absolute)
+            };
+
             ShadowsDictionary = new Dictionary<ShadowDepth, DropShadowEffect>
             {
-                { ShadowDepth.Depth0, null },
-                { ShadowDepth.Depth1, (DropShadowEffect)resourceDictionary["ShadowDepth1"] },
-                { ShadowDepth.Depth2, (DropShadowEffect)resourceDictionary["ShadowDepth2"] },
-                { ShadowDepth.Depth3, (DropShadowEffect)resourceDictionary["ShadowDepth3"] },
-                { ShadowDepth.Depth4, (DropShadowEffect)resourceDictionary["ShadowDepth4"] },
-                { ShadowDepth.Depth5, (DropShadowEffect)resourceDictionary["ShadowDepth5"] },
+                {ShadowDepth.Depth0, null},
+                {ShadowDepth.Depth1, (DropShadowEffect) resourceDictionary["ShadowDepth1"]},
+                {ShadowDepth.Depth2, (DropShadowEffect) resourceDictionary["ShadowDepth2"]},
+                {ShadowDepth.Depth3, (DropShadowEffect) resourceDictionary["ShadowDepth3"]},
+                {ShadowDepth.Depth4, (DropShadowEffect) resourceDictionary["ShadowDepth4"]},
+                {ShadowDepth.Depth5, (DropShadowEffect) resourceDictionary["ShadowDepth5"]}
             };
         }
 
@@ -34,7 +36,7 @@ namespace UIBlocks.MaterialDesign.Converters
         {
             if (!(value is ShadowDepth)) return null;
 
-            return Clone(ShadowsDictionary[(ShadowDepth)value]);
+            return Clone(ShadowsDictionary[(ShadowDepth) value]);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -45,7 +47,7 @@ namespace UIBlocks.MaterialDesign.Converters
         private static DropShadowEffect Clone(DropShadowEffect dropShadowEffect)
         {
             if (dropShadowEffect == null) return null;
-            return new DropShadowEffect()
+            return new DropShadowEffect
             {
                 BlurRadius = dropShadowEffect.BlurRadius,
                 Color = dropShadowEffect.Color,

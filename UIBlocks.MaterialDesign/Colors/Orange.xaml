@@ -23,9 +23,9 @@
     <Color x:Key="Orange900Foreground">#DDFFFFFF</Color>
 
     <SolidColorBrush x:Key="Orange200Brush" Color="{StaticResource Orange200}" />
-    <SolidColorBrush x:Key="Orange200ForegroundBrush" Color="{StaticResource Orange200Foreground}"  />
+    <SolidColorBrush x:Key="Orange200ForegroundBrush" Color="{StaticResource Orange200Foreground}" />
     <SolidColorBrush x:Key="Orange500Brush" Color="{StaticResource Orange500}" />
     <SolidColorBrush x:Key="Orange500ForegroundBrush" Color="{StaticResource Orange500Foreground}" />
-    <SolidColorBrush x:Key="Orange700Brush" Color="{StaticResource Orange700}"  />
+    <SolidColorBrush x:Key="Orange700Brush" Color="{StaticResource Orange700}" />
     <SolidColorBrush x:Key="Orange700ForegroundBrush" Color="{StaticResource Orange100Foreground}" />
 </ResourceDictionary>

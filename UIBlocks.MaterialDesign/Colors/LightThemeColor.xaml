@@ -3,26 +3,26 @@
                     xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Colors"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
-    <Color x:Key="ErrorColor"  po:Freeze="True" >#f44336</Color>
-    <SolidColorBrush x:Key="ValidationErrorBrush"  po:Freeze="True"  Color="{StaticResource ErrorColor}"  />
+    <Color x:Key="ErrorColor" po:Freeze="True">#f44336</Color>
+    <SolidColorBrush x:Key="ValidationErrorBrush" po:Freeze="True" Color="{StaticResource ErrorColor}" />
 
-    <SolidColorBrush x:Key="MDBackground" Color="#FFFFFFFF"   po:Freeze="True" />
-    <SolidColorBrush x:Key="MDPaper" Color="#FFfafafa"   po:Freeze="True" />
-    <SolidColorBrush x:Key="MDBody" Color="#DD000000" po:Freeze="True"  />
+    <SolidColorBrush x:Key="MDBackground" Color="#FFFFFFFF" po:Freeze="True" />
+    <SolidColorBrush x:Key="MDPaper" Color="#FFfafafa" po:Freeze="True" />
+    <SolidColorBrush x:Key="MDBody" Color="#DD000000" po:Freeze="True" />
     <SolidColorBrush x:Key="MDBodyLight" Color="#89000000" po:Freeze="True" />
-    <SolidColorBrush x:Key="MDeColumnHeader" Color="#BC000000"   po:Freeze="True" />
+    <SolidColorBrush x:Key="MDeColumnHeader" Color="#BC000000" po:Freeze="True" />
 
-    <SolidColorBrush x:Key="MDCheckBoxOff" Color="#89000000"  po:Freeze="True" />
-    <SolidColorBrush x:Key="MDCheckBoxDisabled" Color="#FFBDBDBD"  po:Freeze="True" />
+    <SolidColorBrush x:Key="MDCheckBoxOff" Color="#89000000" po:Freeze="True" />
+    <SolidColorBrush x:Key="MDCheckBoxDisabled" Color="#FFBDBDBD" po:Freeze="True" />
 
-    <SolidColorBrush x:Key="MDTextBoxBorder" Color="#89000000"  po:Freeze="True" />
-    <SolidColorBrush x:Key="MDDivider" Color="#1F000000"   po:Freeze="True" />
+    <SolidColorBrush x:Key="MDTextBoxBorder" Color="#89000000" po:Freeze="True" />
+    <SolidColorBrush x:Key="MDDivider" Color="#1F000000" po:Freeze="True" />
 
-    <SolidColorBrush x:Key="MDSelection" Color="#FFDeDeDe"   po:Freeze="True" />
+    <SolidColorBrush x:Key="MDSelection" Color="#FFDeDeDe" po:Freeze="True" />
 
     <SolidColorBrush x:Key="MDFlatButtonClick" Color="#FFDeDeDe" po:Freeze="True" />
 
-    <SolidColorBrush x:Key="MDToolTipBackground" Color="#757575"   po:Freeze="True" />
+    <SolidColorBrush x:Key="MDToolTipBackground" Color="#757575" po:Freeze="True" />
 
     <SolidColorBrush x:Key="MDChipBackground" Color="#12000000" />
 

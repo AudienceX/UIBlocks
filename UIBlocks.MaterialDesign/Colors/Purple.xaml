@@ -23,9 +23,9 @@
     <Color x:Key="Purple900Foreground">#DDFFFFFF</Color>
 
     <SolidColorBrush x:Key="Purple200Brush" Color="{StaticResource Purple200}" />
-    <SolidColorBrush x:Key="Purple200ForegroundBrush" Color="{StaticResource Purple200Foreground}"  />
+    <SolidColorBrush x:Key="Purple200ForegroundBrush" Color="{StaticResource Purple200Foreground}" />
     <SolidColorBrush x:Key="Purple500Brush" Color="{StaticResource Purple500}" />
     <SolidColorBrush x:Key="Purple500ForegroundBrush" Color="{StaticResource Purple500Foreground}" />
-    <SolidColorBrush x:Key="Purple700Brush" Color="{StaticResource Purple700}"  />
+    <SolidColorBrush x:Key="Purple700Brush" Color="{StaticResource Purple700}" />
     <SolidColorBrush x:Key="Purple700ForegroundBrush" Color="{StaticResource Purple100Foreground}" />
 </ResourceDictionary>

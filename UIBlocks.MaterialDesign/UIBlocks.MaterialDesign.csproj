@@ -98,6 +98,10 @@
     <Compile Include="Ripple.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\PopupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Shadow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

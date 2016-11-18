@@ -14,5 +14,17 @@ namespace UIBlocks.MaterialDesign
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PopupBox), new FrameworkPropertyMetadata(typeof(PopupBox)));
         }
+
+        #region ButtonConten
+
+        public static readonly DependencyProperty ButtonContentProperty = DependencyProperty.Register(
+            "ButtonContent", typeof(object), typeof(PopupBox), new PropertyMetadata(default(object)));
+
+        public object ButtonContent
+        {
+            get { return (object) GetValue(ButtonContentProperty); }
+            set { SetValue(ButtonContentProperty, value); }
+        }
+        #endregion
     }
 }

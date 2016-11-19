@@ -52,6 +52,7 @@
     <Compile Include="Converters\CardClipConverter.cs" />
     <Compile Include="Converters\ShadowConverters.cs" />
     <Compile Include="PopupBox.cs" />
+    <Compile Include="PopupEX.cs" />
     <Compile Include="RippleEditor.cs" />
     <Compile Include="ShadowEditor.cs" />
     <Compile Include="UnderLine.cs" />
@@ -98,6 +99,10 @@
     <Compile Include="Ripple.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\PopupBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -2,6 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:UIBlocks.MaterialDesign.Themes"
                     xmlns:lib="clr-namespace:UIBlocks.MaterialDesign">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Menu.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type lib:PopupBox}">
         <!--Setter Property="ButtonContent" Value="{StaticResource ButtonConten}" /-->
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -10,7 +13,30 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type lib:PopupBox}">
-                    
+                    <ControlTemplate.Resources>
+                        <Style x:Key="Seprator" BasedOn="{StaticResource MDSeparator}"/>
+                        <Style TargetType="ToggleButton" x:Key="ToggleButtonStyle">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <lib:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                    Focusable="False" ClipToBounds="False" lib:RippleEditor.IsInCenter="True" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                    VerticalAlignment="{TemplateBinding VerticalAlignment}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                        
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <ToggleButton x:Name="T_Toggle" Style="{StaticResource ToggleButtonStyle}" 
+                                      IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsPopupOpen, Mode=TwoWay}"
+                                      Content="{TemplateBinding ToggleContent}"
+                                      Cursor="Hand"
+                                      VerticalAlignment="Center"
+                                      />
+                        
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

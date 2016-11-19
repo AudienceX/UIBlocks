@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\CardClipConverter.cs" />
     <Compile Include="Converters\ShadowConverters.cs" />
     <Compile Include="PopupBox.cs" />

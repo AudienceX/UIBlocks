@@ -6,7 +6,7 @@
         <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Menu.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type lib:PopupBox}">
-        <!--Setter Property="ButtonContent" Value="{StaticResource ButtonConten}" /-->
+        <Setter Property="ToggleContent" Value="T" />
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="lib:ShadowEditor.ShadowDepth" Value="Depth3"/>
         <Setter Property="Padding" Value="0,8,0,8"/>
@@ -22,7 +22,6 @@
                                         <lib:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
                                                     Focusable="False" ClipToBounds="False" lib:RippleEditor.IsInCenter="True" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                                     VerticalAlignment="{TemplateBinding VerticalAlignment}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                                        
                                     </ControlTemplate>
                                 </Setter.Value>
                             </Setter>
@@ -35,12 +34,74 @@
                                       Cursor="Hand"
                                       VerticalAlignment="Center"
                                       />
-                        
+                        <lib:PopupEX x:Name="T_Popup" IsOpen="{Binding RelativeSource={RelativeSource TemplatedParent},Path=IsPopupOpen,Mode=TwoWay}"
+                                     HorizontalOffset="5" VerticalOffset="5" PlacementTarget="{Binding ElementName=T_Toggle}" PopupAnimation="Fade"
+                                     AllowsTransparency="True" Placement="Custom">
+                            <lib:Card Content="{TemplateBinding PopupContent}"  ContentTemplate="{TemplateBinding PopupContentTemplate}"
+                                      Foreground="{DynamicResource MaterialDesignBody}"
+                                      FontSize="15"
+                                      FontWeight="Regular"
+                                      Padding="{TemplateBinding Padding}"
+                                      RenderOptions.ClearTypeHint="Enabled"                                      
+                                      Margin="5">
+                                <lib:Card.Resources>
+                                    <Style TargetType="Button">
+                                        <Setter Property="VerticalContentAlignment" Value="Bottom" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        <Setter Property="Padding" Value="16 0 16 16" />
+                                        <Setter Property="Foreground" Value="{DynamicResource MDBody}" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Grid>
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroup Name="CommonStates">
+                                                                <VisualStateGroup.Transitions>
+                                                                    <VisualTransition GeneratedDuration="0:0:0.3" To="Normal">
+                                                                        <VisualTransition.GeneratedEasingFunction>
+                                                                            <CircleEase EasingMode="EaseOut"/>
+                                                                        </VisualTransition.GeneratedEasingFunction>
+                                                                    </VisualTransition>
+                                                                </VisualStateGroup.Transitions>
+                                                                <VisualState Name="Normal"/>
+                                                                <VisualState Name="MouseOver">
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetName="MouseOverBorder" Storyboard.TargetProperty="Opacity"
+                                                                                         To="0.1" Duration="0"/>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                                <VisualState Name="Disabled">
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                                                         To="0.48" Duration="0"/>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                            </VisualStateGroup>
+                                                        </VisualStateManager.VisualStateGroups>
+                                                        <Border x:Name="MouseOverBorder"
+                                                                Opacity="0"
+                                                                Background="{TemplateBinding Foreground, Converter={StaticResource BrushRoundConverter}}"/>
+                                                        <lib:Ripple Focusable="False"
+                                                                    MinHeight="48"
+                                                                    Content="{TemplateBinding Content}"
+                                                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                    ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"                                                                
+                                                                    Padding="{TemplateBinding Padding}"/>
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </lib:Card.Resources>
+                            </lib:Card>
+                        </lib:PopupEX>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
     </Style>
     
 </ResourceDictionary>

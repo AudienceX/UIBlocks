@@ -49,6 +49,43 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
+        #region TogggleContentTemplate
+
+        public static readonly DependencyProperty ToggleContentTemplateProperty = DependencyProperty.Register(
+            "ToggleContentTemplate", typeof(DataTemplate), typeof(PopupBox), new PropertyMetadata(default(DataTemplate)));
+
+        public DataTemplate ToggleContentTemplate
+        {
+            get { return (DataTemplate) GetValue(ToggleContentTemplateProperty); }
+            set { SetValue(ToggleContentTemplateProperty, value); }
+        }
+
+        #endregion
+
+        #region ToggleCheckedContent
+
+        public static readonly DependencyProperty ToggleCheckedContentProperty = DependencyProperty.Register(
+            "ToggleCheckedContent", typeof(object), typeof(PopupBox), new PropertyMetadata(default(object)));
+
+        public object ToggleCheckedContent
+        {
+            get { return (object) GetValue(ToggleCheckedContentProperty); }
+            set { SetValue(ToggleCheckedContentProperty, value); }
+        }
+
+        #endregion
+
+        #region ToggleCheckedContentTemplate
+        public static readonly DependencyProperty ToggleCheckedContentTempalteProperty = DependencyProperty.Register(
+            "ToggleCheckedContentTempalte", typeof(DataTemplate), typeof(PopupBox), new PropertyMetadata(default(DataTemplate)));
+
+        public DataTemplate ToggleCheckedContentTempalte
+        {
+            get { return (DataTemplate) GetValue(ToggleCheckedContentTempalteProperty); }
+            set { SetValue(ToggleCheckedContentTempalteProperty, value); }
+        }
+        #endregion
+        
         #region IsPopupOpen，是否弹出
 
         public static readonly DependencyProperty IsPopupOpenProperty = DependencyProperty.Register(
@@ -92,13 +129,110 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
+        #region PlacementMode
+
+        public static readonly DependencyProperty PlacementModeProperty = DependencyProperty.Register(
+            "PlacementMode", typeof(PopupBoxPlacementMode), typeof(PopupBox), new PropertyMetadata(default(PopupBoxPlacementMode)));
+
+        public PopupBoxPlacementMode PlacementMode
+        {
+            get { return (PopupBoxPlacementMode) GetValue(PlacementModeProperty); }
+            set { SetValue(PlacementModeProperty, value); }
+        }
+
+        #endregion
+
+        #region StayOpen
+
+        public static readonly DependencyProperty StayOpenProperty = DependencyProperty.Register(
+            "StayOpen", typeof(bool), typeof(PopupBox), new PropertyMetadata(default(bool)));
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool StayOpen
+        {
+            get { return (bool) GetValue(StayOpenProperty); }
+            set { SetValue(StayOpenProperty, value); }
+        }
+
+        #endregion
+
         private PopupEX _popup;
         private ContentControl _popupContentControl;
         private ToggleButton _togglubutton;
+        private Point _popupPoint;
 
         static PopupBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PopupBox), new FrameworkPropertyMetadata(typeof(PopupBox)));
+        }
+
+        public CustomPopupPlacementCallback PopupPlacementMethod => GetPopupPlacement;
+
+
+        private CustomPopupPlacement[] GetPopupPlacement(Size popupSize, Size targetSize, Point offset)
+        {
+            double x, y;
+            if (FlowDirection == FlowDirection.LeftToRight)
+            {
+                offset.X += targetSize.Width/2;
+            }
+
+            switch (PlacementMode)
+            {
+                case PopupBoxPlacementMode.BottomAndAlignLeftEdges:
+                    x = 0 - Math.Abs(offset.X * 3);
+                    y = targetSize.Height - Math.Abs(offset.Y);
+                    break;
+                case PopupBoxPlacementMode.BottomAndAlignRightEdges:
+                    x = 0 - popupSize.Width + targetSize.Width - offset.X;
+                    y = targetSize.Height - Math.Abs(offset.Y);
+                    break;
+                case PopupBoxPlacementMode.BottomAndAlignCentres:
+                    x = targetSize.Width / 2 - popupSize.Width / 2 - Math.Abs(offset.X * 2);
+                    y = targetSize.Height - Math.Abs(offset.Y);
+                    break;
+                case PopupBoxPlacementMode.TopAndAlignLeftEdges:
+                    x = 0 - Math.Abs(offset.X * 3);
+                    y = 0 - popupSize.Height - Math.Abs(offset.Y * 2);
+                    break;
+                case PopupBoxPlacementMode.TopAndAlignRightEdges:
+                    x = 0 - popupSize.Width + targetSize.Width - offset.X;
+                    y = 0 - popupSize.Height - Math.Abs(offset.Y * 2);
+                    break;
+                case PopupBoxPlacementMode.TopAndAlignCentres:
+                    x = targetSize.Width / 2 - popupSize.Width / 2 - Math.Abs(offset.X * 2);
+                    y = 0 - popupSize.Height - Math.Abs(offset.Y * 2);
+                    break;
+                case PopupBoxPlacementMode.LeftAndAlignTopEdges:
+                    x = 0 - popupSize.Width - Math.Abs(offset.X * 2);
+                    y = 0 - Math.Abs(offset.Y * 3);
+                    break;
+                case PopupBoxPlacementMode.LeftAndAlignBottomEdges:
+                    x = 0 - popupSize.Width - Math.Abs(offset.X * 2);
+                    y = 0 - (popupSize.Height - targetSize.Height);
+                    break;
+                case PopupBoxPlacementMode.LeftAndAlignMiddles:
+                    x = 0 - popupSize.Width - Math.Abs(offset.X * 2);
+                    y = targetSize.Height / 2 - popupSize.Height / 2 - Math.Abs(offset.Y * 2);
+                    break;
+                case PopupBoxPlacementMode.RightAndAlignTopEdges:
+                    x = targetSize.Width;
+                    y = 0 - Math.Abs(offset.X * 3);
+                    break;
+                case PopupBoxPlacementMode.RightAndAlignBottomEdges:
+                    x = targetSize.Width;
+                    y = 0 - (popupSize.Height - targetSize.Height);
+                    break;
+                case PopupBoxPlacementMode.RightAndAlignMiddles:
+                    x = targetSize.Width;
+                    y = targetSize.Height / 2 - popupSize.Height / 2 - Math.Abs(offset.Y * 2);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            _popupPoint=new Point(x,y);
+            return new[] { new CustomPopupPlacement(_popupPoint, PopupPrimaryAxis.Horizontal) };
         }
     }
 }

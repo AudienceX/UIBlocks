@@ -43,9 +43,9 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Image Source="pack://application:,,,/1.jpg"></Image>
             <TextBox Style="{StaticResource MDTextBox}" Width="100" />
-            <MaterialDesign:Card Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6">
+            
+                <MaterialDesign:Card Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100" />

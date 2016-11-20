@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="ComboxPopup.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\CardClipConverter.cs" />
     <Compile Include="Converters\ShadowConverters.cs" />
@@ -90,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Combox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

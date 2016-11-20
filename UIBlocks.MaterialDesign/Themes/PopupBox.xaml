@@ -36,6 +36,7 @@
                                       />
                         <lib:PopupEX x:Name="T_Popup" IsOpen="{Binding RelativeSource={RelativeSource TemplatedParent},Path=IsPopupOpen,Mode=TwoWay}"
                                      HorizontalOffset="5" VerticalOffset="5" PlacementTarget="{Binding ElementName=T_Toggle}" PopupAnimation="Fade"
+                                     CustomPopupPlacementCallback="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PopupPlacementMethod}"             
                                      AllowsTransparency="True" Placement="Custom">
                             <lib:Card Content="{TemplateBinding PopupContent}"  ContentTemplate="{TemplateBinding PopupContentTemplate}"
                                       Foreground="{DynamicResource MaterialDesignBody}"

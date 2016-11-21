@@ -26,10 +26,10 @@ namespace UIBlocks.MaterialDesign
             SizeChanged += OnSizeChanged;
         }
 
-
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+
             //设置初始状态
             VisualStateManager.GoToState(this, "normal", false);
         }
@@ -76,9 +76,7 @@ namespace UIBlocks.MaterialDesign
                 width = sizeChangedEventArgs.NewSize.Width;
                 height = sizeChangedEventArgs.NewSize.Height;
             }
-
             var radius = Math.Sqrt(Math.Pow(width, 2) + Math.Pow(height, 2));
-
             size = 2*radius*1.0;
         }
 

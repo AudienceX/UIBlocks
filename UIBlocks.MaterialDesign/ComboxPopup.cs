@@ -14,12 +14,13 @@ namespace UIBlocks.MaterialDesign
         #region Background
         public static readonly DependencyProperty BackgroundProperty = DependencyProperty.Register(
             "Background", typeof(Brush), typeof(ComboxPopup), new PropertyMetadata(default(Brush)));
-
         public Brush Background
         {
             get { return (Brush) GetValue(BackgroundProperty); }
             set { SetValue(BackgroundProperty, value); }
         }
         #endregion
+
+
     }
 }

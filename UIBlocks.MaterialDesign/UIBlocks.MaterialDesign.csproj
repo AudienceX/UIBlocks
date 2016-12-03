@@ -49,14 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
-    <Compile Include="ComboxPopup.cs" />
+    <Compile Include="ComboBoxPopup.cs" />
+    <Compile Include="ComboxEditor.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\CardClipConverter.cs" />
+    <Compile Include="Converters\MathConverter.cs" />
     <Compile Include="Converters\ShadowConverters.cs" />
-    <Compile Include="PopupBox.cs" />
-    <Compile Include="PopupEX.cs" />
+    <Compile Include="DpiHelper.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="PopupEx.cs" />
     <Compile Include="RippleEditor.cs" />
     <Compile Include="ShadowEditor.cs" />
+    <Compile Include="TeeeHelper.cs" />
+    <Compile Include="TextFieldEditor.cs" />
     <Compile Include="UnderLine.cs" />
     <Page Include="Colors\Blue.xaml">
       <SubType>Designer</SubType>
@@ -94,7 +99,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Combox.xaml">
+    <Page Include="Themes\ComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -105,14 +110,6 @@
     <Compile Include="Ripple.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Themes\Menu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\PopupBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Themes\Shadow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

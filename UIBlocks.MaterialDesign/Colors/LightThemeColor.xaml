@@ -4,6 +4,11 @@
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
     <Color x:Key="ErrorColor" po:Freeze="True">#f44336</Color>
+
+
+    <Color x:Key="MDShadow">#AA000000</Color>
+
+    <SolidColorBrush x:Key="MDShadowBrush" Color="{StaticResource MDShadow}"/>
     <SolidColorBrush x:Key="ValidationErrorBrush" po:Freeze="True" Color="{StaticResource ErrorColor}" />
 
     <SolidColorBrush x:Key="MDBackground" Color="#FFFFFFFF" po:Freeze="True" />

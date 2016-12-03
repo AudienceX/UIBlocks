@@ -13,6 +13,7 @@
                 <ResourceDictionary
                     Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Colors/ColorRoot.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/ComboBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -13,14 +13,18 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Button Style="{StaticResource MDCirclebutton_LightPurple}" Width="50" Height="50" Content="L" />
             <Button Style="{StaticResource MDCirclebutton_MidPurple}" Width="60" Height="60" Content="M"
                     MaterialDesign:RippleEditor.IsInCenter="True" />
             <Button Style="{StaticResource MDCirclebutton_DarkPurple}" Width="70" Height="70" Content="D"
-                    MaterialDesign:ShadowEditor.ShadowDepth="Depth4" />
+                    MaterialDesign:ShadowEditor.ShadowDepth="Depth2" />
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Button Style="{StaticResource MDFlatButton}" Content="Accept" />
@@ -44,8 +48,8 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBox Style="{StaticResource MDTextBox}" Width="100" />
-            
-                <MaterialDesign:Card Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6">
+
+            <MaterialDesign:Card Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100" />
@@ -56,8 +60,54 @@
                     <TextBlock Text="SSSSSSSSSS" Grid.Row="1" />
                     <Button Style="{StaticResource MDCirclebutton_MidPurple}" Content="A" IsEnabled="True"
                             HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="0" Margin="0,0,4,0" />
+
                 </Grid>
             </MaterialDesign:Card>
+
         </StackPanel>
+        <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="100" Grid.Row="0" Margin="0,8,0,8" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>
+            <ComboBoxItem Content="1231"/>
+            <ComboBoxItem Content="123123"/>
+            <ComboBoxItem Content=" saujydfgjdsf"/>v
+        </ComboBox>
     </Grid>
 </Window>

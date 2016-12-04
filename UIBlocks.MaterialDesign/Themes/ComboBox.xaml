@@ -371,9 +371,7 @@
             </Grid>
         </Grid>
     </ControlTemplate>
-
-
-
+    
     <Style x:Key="MDComboBoxEditableTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="AllowDrop" Value="true" />
@@ -396,23 +394,37 @@
         </Setter>
     </Style>
 
-    <ControlTemplate x:Key="MDFloatingHintComboBox" TargetType="ComboBox">
+
+    <ControlTemplate x:Key="MDFloatingHintComboBox" TargetType="{x:Type ComboBox}">
         <Grid x:Name="templateRoot"
-                Background="{TemplateBinding Background}"
-                SnapsToDevicePixels="True">
+              Background="{TemplateBinding Background}"
+              SnapsToDevicePixels="True">
             <Grid x:Name="InnerRoot">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="0" MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
                 </Grid.ColumnDefinitions>
-            </Grid>
-            <ContentPresenter x:Name="contentPresenter"
+                <ToggleButton x:Name="toggleButton"
+                              Grid.ColumnSpan="2"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                              Style="{StaticResource MDComboBoxToggleButton}"/>
+                <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                      Margin="{TemplateBinding Padding}"
+                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                      UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+                    <Grid x:Name="InputRoot"
+                          HorizontalAlignment="Left">
+                        <ContentPresenter x:Name="contentPresenter"
                                           Content="{TemplateBinding SelectionBoxItem}"
                                           ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
                                           ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                           IsHitTestVisible="False"/>
-            <TextBox x:Name="PART_EditableTextBox"
+                        <TextBox x:Name="PART_EditableTextBox"
                                  IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
                                  HorizontalAlignment="Left"
                                  HorizontalContentAlignment="Stretch"
@@ -420,31 +432,22 @@
                                  CaretBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"                                 
                                  Visibility="Collapsed" />
 
-            <ToggleButton x:Name="toggleButton"
-                              Grid.ColumnSpan="2"
-                              Background="{TemplateBinding Background}"
-                              BorderBrush="{TemplateBinding BorderBrush}"
-                              BorderThickness="{TemplateBinding BorderThickness}"
-                              IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                              Style="{StaticResource MDComboBoxToggleButton}"/>
-            <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                      Margin="{TemplateBinding Padding}"
-                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                      UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
-                <Grid x:Name="InputRoot"
-                          HorizontalAlignment="Left">
-
-                    <!--smarthint-->
-
+                        <lib:SmartHint x:Name="Hint"
+                                       HintProxy="{Binding RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:HintProxyFabricConverter.Instance}}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                       UseLayoutRounding="{TemplateBinding UseLayoutRounding}"
+                                       UseFloating="{Binding Path=(lib:HintEditor.IsFloating), RelativeSource={RelativeSource TemplatedParent}}"
+                                       HintOpacity="{Binding Path=(lib:HintEditor.HintOpacity), RelativeSource={RelativeSource TemplatedParent}}"
+                                       Hint="{TemplateBinding lib:HintEditor.Hint}" />
+                    </Grid>
                 </Grid>
-            </Grid>
-            <lib:UnderLine x:Name="Underline"
+                <lib:UnderLine x:Name="Underline"
                                Grid.ColumnSpan="2"
                                IsActive="{Binding ElementName=PART_EditableTextBox, Path=IsKeyboardFocused}"
                                Visibility="{Binding Path=(lib:TextFieldEditor.DecorationVisibility), RelativeSource={RelativeSource TemplatedParent}}"/>
 
-            <lib:ComboBoxPopup x:Name="PART_Popup"
+                <lib:ComboBoxPopup x:Name="PART_Popup"
                                    AllowsTransparency="true"
                                    Focusable="False"
                                    HorizontalOffset="-11.5"
@@ -461,13 +464,14 @@
                                    UpContentTemplate="{StaticResource PopupContentUpTemplate}"
                                    DownContentTemplate="{StaticResource PopupContentDownTemplate}"
                                    DefaultContentTemplate="{StaticResource PopupContentDefaultTemplate}">
-                <ContentControl>
-                    <ScrollViewer MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                    <ContentControl>
+                        <ScrollViewer MaxHeight="{TemplateBinding MaxDropDownHeight}"
                                       Background="{Binding Background, ElementName=PART_Popup}">
-                        <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" />
-                    </ScrollViewer>
-                </ContentControl>
-            </lib:ComboBoxPopup>
+                            <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" />
+                        </ScrollViewer>
+                    </ContentControl>
+                </lib:ComboBoxPopup>
+            </Grid>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsEnabled" Value="False">
@@ -477,6 +481,9 @@
                 <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
                 <Setter TargetName="Underline" Property="Visibility" Value="{Binding Path=(lib:TextFieldEditor.DecorationVisibility), RelativeSource={RelativeSource TemplatedParent}}" />
                 <Setter TargetName="contentPresenter" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="lib:HintEditor.IsFloating" Value="True">
+                <Setter TargetName="InnerRoot" Property="Margin" Value="0 11.5 0 0" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -488,6 +495,30 @@
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
+                    <Condition SourceName="Hint" Property="IsContentNullOrEmpty" Value="False" />
+                    <Condition Property="IsKeyboardFocused" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="Hint" Property="Foreground" Value="{DynamicResource Purple500Brush}" />
+                <Setter TargetName="Hint" Property="HintOpacity" Value="1" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="Hint" Property="IsContentNullOrEmpty" Value="False" />
+                    <Condition SourceName="PART_EditableTextBox" Property="IsKeyboardFocused" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="Hint" Property="Foreground" Value="{DynamicResource Purple500Brush}" />
+                <Setter TargetName="Hint" Property="HintOpacity" Value="1" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="Hint" Property="IsContentNullOrEmpty" Value="False" />
+                    <Condition Property="IsDropDownOpen" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="Hint" Property="Foreground" Value="{DynamicResource Purple500Brush}" />
+                <Setter TargetName="Hint" Property="HintOpacity" Value="1" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
                     <Condition Property="IsGrouping" Value="true" />
                     <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false" />
                 </MultiTrigger.Conditions>
@@ -496,6 +527,26 @@
             <Trigger Property="IsKeyboardFocused" Value="true">
                 <Setter TargetName="Underline" Property="IsActive" Value="True"/>
             </Trigger>
+            <!--Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}"/>
+                <Setter TargetName="Underline" Property="Background" Value="{DynamicResource ValidationErrorBrush}"/>
+            </-->
+            <!--MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="true" />
+                    <Condition Property="Validation.HasError" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}"/>
+                <Setter TargetName="Underline" Property="Background" Value="{DynamicResource ValidationErrorBrush}"/>
+            </-->
+            <!--MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="true" />
+                    <Condition Property="Validation.HasError" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                <Setter TargetName="Underline" Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+            </-->
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
@@ -532,6 +583,7 @@
             <Trigger Property="lib:ComboxEditor.ShowSelectedItem" Value="{StaticResource TrueValue}">
                 <Setter Property="ItemContainerStyle" Value="{StaticResource MDComboBoxItemStyle}" />
             </Trigger>
+
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

@@ -51,15 +51,25 @@
     <Compile Include="Card.cs" />
     <Compile Include="ComboBoxPopup.cs" />
     <Compile Include="ComboxEditor.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\CardClipConverter.cs" />
+    <Compile Include="Converters\HintProxyFabricConverter.cs" />
     <Compile Include="Converters\MathConverter.cs" />
+    <Compile Include="Converters\MathMultipleConverter.cs" />
+    <Compile Include="Converters\RangePositionConverterConverter.cs" />
     <Compile Include="Converters\ShadowConverters.cs" />
     <Compile Include="DpiHelper.cs" />
     <Compile Include="Extension.cs" />
+    <Compile Include="HintEditor.cs" />
+    <Compile Include="HintFabric.ComboBox.cs" />
+    <Compile Include="HintFabric.TextBox.cs" />
+    <Compile Include="HintProxyFabric.cs" />
+    <Compile Include="IHintProxy.cs" />
     <Compile Include="PopupEx.cs" />
     <Compile Include="RippleEditor.cs" />
     <Compile Include="ShadowEditor.cs" />
+    <Compile Include="SmartHint.cs" />
     <Compile Include="TeeeHelper.cs" />
     <Compile Include="TextFieldEditor.cs" />
     <Compile Include="UnderLine.cs" />
@@ -111,6 +121,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Themes\Shadow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SmartHint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

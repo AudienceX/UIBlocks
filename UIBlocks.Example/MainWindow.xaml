@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:UIBlocks.Example"
     xmlns:MaterialDesign="clr-namespace:UIBlocks.MaterialDesign;assembly=UIBlocks.MaterialDesign"
+    xmlns:converters="clr-namespace:UIBlocks.MaterialDesign.Converters;assembly=UIBlocks.MaterialDesign"
     x:Class="UIBlocks.Example.MainWindow"
     mc:Ignorable="d"
     Title="各种控件的例子 Example" Height="800" Width="1000">
@@ -47,7 +48,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBox Style="{StaticResource MDTextBox}" Width="100" />
+            <TextBox Style="{StaticResource MDTextBox}" Width="100" MaterialDesign:HintEditor.Hint="123132" MaterialDesign:HintEditor.IsFloating="True"/>
 
             <MaterialDesign:Card Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6">
                 <Grid>
@@ -65,49 +66,14 @@
             </MaterialDesign:Card>
 
         </StackPanel>
-        <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="100" Grid.Row="0" Margin="0,8,0,8" Grid.ColumnSpan="2">
+        <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="100" Grid.Row="0" Margin="0,8,0,8" Grid.ColumnSpan="2"
+                  MaterialDesign:HintEditor.Hint="Name"
+                  MaterialDesign:HintEditor.HintOpacity="0.5"
+                  MaterialDesign:HintEditor.IsFloating="True"
+                  >
             <ComboBoxItem Content="1231"/>
             <ComboBoxItem Content="123123"/>
             <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>
-            <ComboBoxItem Content="1231"/>
-            <ComboBoxItem Content="123123"/>
-            <ComboBoxItem Content=" saujydfgjdsf"/>v
         </ComboBox>
     </Grid>
 </Window>

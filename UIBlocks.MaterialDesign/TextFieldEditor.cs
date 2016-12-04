@@ -51,10 +51,6 @@ namespace UIBlocks.MaterialDesign
                 return;
             }
 
-            Console.WriteLine(textBox.Name.ToString()+"=========Ent");
-            if (textBox.Template==null) return;
-            Console.WriteLine(textBox.Name.ToString()+"=========Lea");
-
             var frameworkElement = (textBox.Template.FindName("PART_ContentHost", textBox) as ScrollViewer)?.Content as FrameworkElement;
             if (frameworkElement != null)
             {
@@ -64,7 +60,7 @@ namespace UIBlocks.MaterialDesign
 
         private static void TextBoxViewMarginPropertyChangedCallback(DependencyObject dependencyObject,DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
-            var box = dependencyObject as Control; //could be a text box or password box
+            var box = dependencyObject as Control;
             if (box == null)
             {
                 return;

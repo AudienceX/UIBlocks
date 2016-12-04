@@ -11,13 +11,13 @@ namespace UIBlocks.MaterialDesign
 {
     [TemplateVisualState(GroupName = ContentStatesGroupName, Name = ContentEmptyName)]
     [TemplateVisualState(GroupName = ContentStatesGroupName, Name = ContentNotEmptyName)]
-    public class SmartHint : Control
+    public class SmartHint : Control    //文本框浮动提示
     {
         public const string ContentStatesGroupName = "ContentStates";
         public const string ContentEmptyName = "ContentEmpty";
         public const string ContentNotEmptyName = "ContentNotEmpty";
 
-        #region ManagedProperty
+        #region ManagedProperty，依赖属性，提示的各类属性。
 
         public static readonly DependencyProperty HintProxyProperty = DependencyProperty.Register(
             nameof(HintProxy), typeof(IHintProxy), typeof(SmartHint), new PropertyMetadata(default(IHintProxy), HintProxyPropertyChangedCallback));
@@ -30,7 +30,7 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
-        #region HintProperty
+        #region HintProperty，依赖属性，提示的内容
 
         public static readonly DependencyProperty HintProperty = DependencyProperty.Register(
             nameof(Hint), typeof(object), typeof(SmartHint), new PropertyMetadata(null));
@@ -43,7 +43,7 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
-        #region IsContentNullOrEmpty
+        #region IsContentNullOrEmpty，依赖属性，内容是否为空。
 
         public static readonly DependencyProperty IsContentNullOrEmptyProperty = DependencyProperty.Register(
             nameof(IsContentNullOrEmpty), typeof(bool), typeof(SmartHint), new PropertyMetadata(default(bool)));
@@ -56,7 +56,7 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
-        #region UseFloating
+        #region UseFloating，依赖属性，是否开启浮动
 
         public static readonly DependencyProperty UseFloatingProperty = DependencyProperty.Register(
             nameof(UseFloating), typeof(bool), typeof(SmartHint), new PropertyMetadata(false));
@@ -69,7 +69,7 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
-        #region FloatingScale & FloatingOffset
+        #region FloatingScale & FloatingOffset，依赖属性，浮动偏移
 
         public static readonly DependencyProperty FloatingScaleProperty = DependencyProperty.Register(
             nameof(FloatingScale), typeof(double), typeof(SmartHint), new PropertyMetadata(.74));
@@ -91,7 +91,7 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
-        #region HintOpacity
+        #region HintOpacity，依赖属性，提示透明度。
 
         public static readonly DependencyProperty HintOpacityProperty = DependencyProperty.Register(
             nameof(HintOpacity), typeof(double), typeof(SmartHint), new PropertyMetadata(.46));
@@ -180,8 +180,7 @@ namespace UIBlocks.MaterialDesign
                     : ContentNotEmptyName;
                 Console.WriteLine(state.ToString());
 
-                bool ans=VisualStateManager.GoToState(this, state, useTransitions);
-                Console.WriteLine(ans);
+                VisualStateManager.GoToState(this, state, useTransitions);
             });
 
             if (DesignerProperties.GetIsInDesignMode(this))

@@ -9,7 +9,7 @@ namespace UIBlocks.MaterialDesign
 {
     public static class HintEditor
     {
-        #region UsingFloat
+        #region UsingFloat，附加属性，提示是否开启。
         public static readonly DependencyProperty IsFloatingProperty = DependencyProperty.RegisterAttached(
             "IsFloating",
             typeof(bool),
@@ -27,7 +27,7 @@ namespace UIBlocks.MaterialDesign
         }
         #endregion
 
-        #region FloatingScale+FloatingOffset
+        #region FloatingScale+FloatingOffset，附加属性，提示偏移。
         public static readonly DependencyProperty FloatingScaleProperty = DependencyProperty.RegisterAttached(
             "FloatingScale",
             typeof(double),
@@ -62,11 +62,7 @@ namespace UIBlocks.MaterialDesign
 
         #endregion
 
-        #region Hint
-
-        /// <summary>
-        /// The hint property
-        /// </summary>
+        #region Hint，附加属性，提示内容。
         public static readonly DependencyProperty HintProperty = DependencyProperty.RegisterAttached(
             "Hint",
             typeof(object),
@@ -82,11 +78,7 @@ namespace UIBlocks.MaterialDesign
         }
 
         #endregion
-        #region HintOpacity
-
-        /// <summary>
-        /// The hint opacity property
-        /// </summary>
+        #region HintOpacity，附加属性，提示透明度。
         public static readonly DependencyProperty HintOpacityProperty = DependencyProperty.RegisterAttached(
             "HintOpacity",
             typeof(double),

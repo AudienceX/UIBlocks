@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:UIBlocks.Example"
     xmlns:MaterialDesign="clr-namespace:UIBlocks.MaterialDesign;assembly=UIBlocks.MaterialDesign"
+    xmlns:transitions="clr-namespace:UIBlocks.MaterialDesign.Transitions;assembly=UIBlocks.MaterialDesign"
     xmlns:converters="clr-namespace:UIBlocks.MaterialDesign.Converters;assembly=UIBlocks.MaterialDesign"
     x:Class="UIBlocks.Example.MainWindow"
     mc:Ignorable="d"
@@ -45,6 +46,13 @@
                 <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" />
                 <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" IsChecked="True" />
                 <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" IsEnabled="False" />
+                <StackPanel Orientation="Vertical">
+                    <ProgressBar Value="25" Margin="24" Width="100" Style="{StaticResource MaterialDesignLinearProgressBar}"/>
+                    <ProgressBar Value="50" Margin="24" Style="{StaticResource MaterialDesignLinearProgressBar}"
+                                 transitions:TransitionEditor.DisableTransitions="True" Width="100"/>
+                    <!-- should disable on 2nd transition... -->
+                    <ProgressBar Value="5000" IsIndeterminate="True" Style="{StaticResource MaterialDesignLinearProgressBar}" Width="100"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">

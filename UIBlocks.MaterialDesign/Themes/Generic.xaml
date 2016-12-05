@@ -9,6 +9,7 @@
         <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/SmartHint.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/ComboBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Themes/ProgressBar.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type local:Ripple}">
         <Setter Property="HorizontalAlignment" Value="Stretch" />

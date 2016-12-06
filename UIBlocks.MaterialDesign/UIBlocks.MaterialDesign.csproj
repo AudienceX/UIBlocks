@@ -72,6 +72,13 @@
     <Compile Include="SmartHint.cs" />
     <Compile Include="TeeeHelper.cs" />
     <Compile Include="TextFieldEditor.cs" />
+    <Compile Include="Converters\CircleProgressBar\ArcEndPointConverter.cs" />
+    <Compile Include="Converters\CircleProgressBar\ArcSizeConverter.cs" />
+    <Compile Include="Converters\CircleProgressBar\LargeArcConverter.cs" />
+    <Compile Include="Converters\CircleProgressBar\LocalEx.cs" />
+    <Compile Include="Converters\CircleProgressBar\RotateTransformCentreConverter.cs" />
+    <Compile Include="Converters\CircleProgressBar\RotateTransformConverter.cs" />
+    <Compile Include="Converters\CircleProgressBar\StartPointConverter.cs" />
     <Compile Include="Transitions\TransitionEditor.cs" />
     <Compile Include="UnderLine.cs" />
     <Page Include="Colors\Blue.xaml">

@@ -12,14 +12,24 @@
     Title="各种控件的例子 Example" Height="800" Width="1000">
     <Grid Background="{StaticResource MDBackground}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Button Style="{StaticResource MDCirclebutton_LightPurple}" Width="50" Height="50" Content="L" />
@@ -52,6 +62,7 @@
                                  transitions:TransitionEditor.DisableTransitions="True" Width="100"/>
                     <!-- should disable on 2nd transition... -->
                     <ProgressBar Value="5000" IsIndeterminate="True" Style="{StaticResource MaterialDesignLinearProgressBar}" Width="100"/>
+
                 </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -83,5 +94,13 @@
             <ComboBoxItem Content="123123"/>
             <ComboBoxItem Content=" saujydfgjdsf"/>
         </ComboBox>
+        <StackPanel Grid.Row="2">
+            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" Value="50"/>
+            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" IsIndeterminate="True"/>
+            <MaterialDesign:Card Width="{Binding Path=Width,ElementName=testpro}" Cornerradius="14">
+                <ProgressBar x:Name="testpro" Style="{StaticResource MaterialDesignCircularProgressBar}" IsIndeterminate="True" Value="50"/>
+            </MaterialDesign:Card>
+        </StackPanel>
+
     </Grid>
 </Window>

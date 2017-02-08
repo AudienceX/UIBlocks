@@ -4,7 +4,7 @@
                     xmlns:lib="clr-namespace:UIBlocks.MaterialDesign"
                     xmlns:circularProgressBar="clr-namespace:UIBlocks.MaterialDesign.Converters.CircleProgressBar"
                     xmlns:transitions="clr-namespace:UIBlocks.MaterialDesign.Transitions">
-    <Style x:Key="MaterialDesignLinearProgressBar" TargetType="{x:Type ProgressBar}">
+    <Style x:Key="MDLinearProgressBar" TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{DynamicResource Purple700Brush}"/>
         <Setter Property="Background" Value="{DynamicResource Purple200Brush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Purple200Brush}"/>
@@ -121,8 +121,8 @@
     <circularProgressBar:RotateTransformConverter x:Key="RotateTransformConverter" />
     <circularProgressBar:RotateTransformCentreConverter x:Key="RotateTransformCentreConverter" />
 
-
-    <Style x:Key="MaterialDesignCircularProgressBar" TargetType="{x:Type ProgressBar}">
+    <!--圆形进度条-->
+    <Style x:Key="MDCircularProgressBar" TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{DynamicResource Purple500Brush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Width" Value="20" />

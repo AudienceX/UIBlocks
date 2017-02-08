@@ -18,7 +18,6 @@ namespace UIBlocks.MaterialDesign
         public const string ContentNotEmptyName = "ContentNotEmpty";
 
         #region ManagedProperty，依赖属性，提示的各类属性。
-
         public static readonly DependencyProperty HintProxyProperty = DependencyProperty.Register(
             nameof(HintProxy), typeof(IHintProxy), typeof(SmartHint), new PropertyMetadata(default(IHintProxy), HintProxyPropertyChangedCallback));
 
@@ -27,11 +26,9 @@ namespace UIBlocks.MaterialDesign
             get { return (IHintProxy)GetValue(HintProxyProperty); }
             set { SetValue(HintProxyProperty, value); }
         }
-
         #endregion
 
         #region HintProperty，依赖属性，提示的内容
-
         public static readonly DependencyProperty HintProperty = DependencyProperty.Register(
             nameof(Hint), typeof(object), typeof(SmartHint), new PropertyMetadata(null));
 
@@ -40,7 +37,6 @@ namespace UIBlocks.MaterialDesign
             get { return GetValue(HintProperty); }
             set { SetValue(HintProperty, value); }
         }
-
         #endregion
 
         #region IsContentNullOrEmpty，依赖属性，内容是否为空。
@@ -178,7 +174,6 @@ namespace UIBlocks.MaterialDesign
                 var state = String.IsNullOrEmpty((proxy.Content ?? String.Empty).ToString())
                     ? ContentEmptyName
                     : ContentNotEmptyName;
-                Console.WriteLine(state.ToString());
 
                 VisualStateManager.GoToState(this, state, useTransitions);
             });

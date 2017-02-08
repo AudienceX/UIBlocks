@@ -8,8 +8,6 @@
             Source="pack://application:,,,/UIBlocks.MaterialDesign;component/Colors/LightThemeColor.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="MDTextBox" TargetType="TextBox">
-        <Setter Property="Foreground"
-                Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}" />
         <Setter Property="BorderBrush" Value="{DynamicResource MDTextBoxBorder}" />
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="Background" Value="Transparent" />
@@ -47,7 +45,7 @@
                                                HintOpacity="{Binding Path=(lib:HintEditor.HintOpacity), RelativeSource={RelativeSource TemplatedParent}}"
                                                UseFloating="{Binding Path=(lib:HintEditor.IsFloating), RelativeSource={RelativeSource TemplatedParent}}"
                                                FloatingScale="{Binding Path=(lib:HintEditor.FloatingScale), RelativeSource={RelativeSource TemplatedParent}}"
-                                               FloatingOffset="{Binding Path=(lib:HintEditor.FloatingOffset), RelativeSource={RelativeSource TemplatedParent}}"                                               
+                                               FloatingOffset="{Binding Path=(lib:HintEditor.FloatingOffset), RelativeSource={RelativeSource TemplatedParent}}"                     
                                                />
                             </Grid>
                         </Border>
@@ -85,5 +83,4 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
-
 </ResourceDictionary>

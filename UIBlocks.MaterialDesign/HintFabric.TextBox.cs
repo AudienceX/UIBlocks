@@ -10,17 +10,20 @@ namespace UIBlocks.MaterialDesign
 {
     public static partial class HintProxyFabric
     {
-        private sealed class TextBoxHintProxy : IHintProxy
+        private class TextBoxHintProxy : IHintProxy
         {
             private readonly TextBox _textBox;
 
             public object Content => _textBox.Text;
+
             public bool IsLoaded => _textBox.IsLoaded;
+
             public bool IsVisible => _textBox.IsVisible;
 
             public event EventHandler ContentChanged;
             public event EventHandler IsVisibleChanged;
             public event EventHandler Loaded;
+
 
             public TextBoxHintProxy(TextBox textBox)
             {

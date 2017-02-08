@@ -110,6 +110,7 @@ namespace UIBlocks.MaterialDesign
                 VisualStateManager.GoToState(this, "click", true);
                 instance.Add(this);
             }
+            Console.WriteLine(X+" "+Y);
             base.OnMouseLeftButtonDown(e);
         }
 

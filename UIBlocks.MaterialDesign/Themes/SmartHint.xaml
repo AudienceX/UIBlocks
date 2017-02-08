@@ -128,7 +128,8 @@
                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                         Opacity="{TemplateBinding HintOpacity}"
                                         IsHitTestVisible="False"
-                                        IsTabStop="False"                                        
+                                        IsTabStop="False"               
+                                        Foreground="{TemplateBinding Foreground}"
                                         RenderTransformOrigin="0,1">
                                     <ContentControl.Tag>
                                         <system:Double>0.0</system:Double>

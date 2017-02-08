@@ -57,17 +57,18 @@
                 <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" IsChecked="True" />
                 <ToggleButton Style="{StaticResource MDSwithToggleButton}" Margin="5" IsEnabled="False" />
                 <StackPanel Orientation="Vertical">
-                    <ProgressBar Value="25" Margin="24" Width="100" Style="{StaticResource MaterialDesignLinearProgressBar}"/>
-                    <ProgressBar Value="50" Margin="24" Style="{StaticResource MaterialDesignLinearProgressBar}"
+                    <ProgressBar Value="25" Margin="24" Width="100" Style="{StaticResource MDLinearProgressBar}"/>
+                    <ProgressBar Value="50" Margin="24" Style="{StaticResource MDLinearProgressBar}"
                                  transitions:TransitionEditor.DisableTransitions="True" Width="100"/>
                     <!-- should disable on 2nd transition... -->
-                    <ProgressBar Value="5000" IsIndeterminate="True" Style="{StaticResource MaterialDesignLinearProgressBar}" Width="100"/>
+                    <ProgressBar Value="5000" IsIndeterminate="True" Style="{StaticResource MDLinearProgressBar}" Width="100"/>
 
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBox Style="{StaticResource MDTextBox}" Width="100" MaterialDesign:HintEditor.Hint="123132" MaterialDesign:HintEditor.IsFloating="True"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" >
+            <TextBox Style="{StaticResource MDTextBox}" Width="100" MaterialDesign:HintEditor.Hint="123132" MaterialDesign:HintEditor.IsFloating="True"
+                     />
 
             <MaterialDesign:Card Width="100" Height="160" Margin="4,4,4,4" Cornerradius="6">
                 <Grid>
@@ -95,12 +96,12 @@
             <ComboBoxItem Content=" saujydfgjdsf"/>
         </ComboBox>
         <StackPanel Grid.Row="2">
-            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" Value="50"/>
-            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" IsIndeterminate="True"/>
+            <ProgressBar Style="{StaticResource MDCircularProgressBar}" Value="50"/>
+            <ProgressBar Style="{StaticResource MDCircularProgressBar}" IsIndeterminate="True"/>
             <MaterialDesign:Card Width="{Binding Path=Width,ElementName=testpro}" Cornerradius="14">
-                <ProgressBar x:Name="testpro" Style="{StaticResource MaterialDesignCircularProgressBar}" IsIndeterminate="True" Value="50"/>
+                <ProgressBar x:Name="testpro" Style="{StaticResource MDCircularProgressBar}" IsIndeterminate="True" Value="50"/>
             </MaterialDesign:Card>
-        </StackPanel>
 
+        </StackPanel>
     </Grid>
 </Window>

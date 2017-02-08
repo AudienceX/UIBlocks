@@ -93,7 +93,6 @@ namespace UIBlocks.MaterialDesign
         {
             element.SetValue(HintOpacityProperty, value);
         }
-
         #endregion
     }
 }

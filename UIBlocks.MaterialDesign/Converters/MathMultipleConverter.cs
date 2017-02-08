@@ -32,7 +32,6 @@ namespace UIBlocks.MaterialDesign.Converters
                 case MathOperation.Subtract:
                     return value1 - value2;
             }
-
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

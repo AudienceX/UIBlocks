@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UIBlocks.MaterialDesignTheme.Colors"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+    <Color x:Key="PurplePrimary200">#ce93d8</Color>
+    <Color x:Key="PurplePrimary200Foreground">#DD000000</Color>
+    <Color x:Key="PurplePrimary500">#9c27b0</Color>
+    <Color x:Key="PurplePrimary500Foreground">#DDFFFFFF</Color>
+    <Color x:Key="PurplePrimary700">#7b1fa2</Color>
+    <Color x:Key="PurplePrimary700Foreground">#DDFFFFFF</Color>
+
+    <SolidColorBrush x:Key="Purple200Brush" Color="{StaticResource PurplePrimary200}" />
+    <SolidColorBrush x:Key="Purple200Foreground" Color="{StaticResource PurplePrimary200Foreground}" />
+    <SolidColorBrush x:Key="Purple500Brush" Color="{StaticResource PurplePrimary500}" />
+    <SolidColorBrush x:Key="Purple500Foreground" Color="{StaticResource PurplePrimary500Foreground}" />
+    <SolidColorBrush x:Key="Purple700Brush" Color="{StaticResource PurplePrimary700}" />
+    <SolidColorBrush x:Key="Purple700Foreground" Color="{StaticResource PurplePrimary700Foreground}" />
+</ResourceDictionary>

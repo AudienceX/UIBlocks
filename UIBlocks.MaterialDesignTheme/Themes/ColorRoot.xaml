@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UIBlocks.MaterialDesignTheme.Themes">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesignTheme;component/Themes/Light.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UIBlocks.MaterialDesignTheme;component/Colors/MDColor.Purple.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -10,12 +10,18 @@
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
         <md:DialogHost Identifier="rootdialog">
-                <StackPanel>
-                    <Button Style="{StaticResource MDFlatButton}" Content="213213" Width="50" Click="Button_Click"/>
-                    <Button Style="{StaticResource MDRoundBoutton}" Content="124" />
-                    <Button Style="{StaticResource MDRoundBoutton}" Width="60" Height='60' md:RippleEditor.OnCenter="True" />
-                    <Button Style="{StaticResource MDRectBoutton}" Width="60" Height='35'  />
-                    <md:ColorZone Height="50" Width="200" md:ShadowEditor.shadowdepth="Depth2" Foreground="Black" Background="{StaticResource Purple200Brush}" />
+            <StackPanel Margin="5 5 5 5">
+                <md:PopupBox Style="{StaticResource MDPopupBox}" >
+                    <StackPanel>
+                        <Button>ad</Button>
+                        <Button>asdasdasd</Button>
+                    </StackPanel>
+                </md:PopupBox>
+                <Button Style="{StaticResource MDFlatButton}" Content="213213" Width="50" Click="Button_Click"/>
+                <Button Style="{StaticResource MDRoundBoutton}" Content="124" />
+                <Button Style="{StaticResource MDRoundBoutton}" Width="60" Height='60' md:RippleEditor.OnCenter="True" />
+                <Button Style="{StaticResource MDRectBoutton}" Width="60" Height='35'  />
+                <md:ColorZone Height="50" Width="200" md:ShadowEditor.shadowdepth="Depth2" Foreground="Black" Background="{StaticResource Purple200Brush}" />
                 <md:Card Width="300" Height="100" CardCornerRadius="4.0" >
                     <StackPanel Orientation="Horizontal" >
                         <TextBox Style="{StaticResource MDTextBox}" Width="100" Height="60" md:HintEditor.Hint="test" md:HintEditor.IsFloating="True" />
@@ -31,7 +37,16 @@
                 </md:Card>
                 <ProgressBar IsIndeterminate="True" Style="{StaticResource MDLinearProgressBar}"/>
                 <ProgressBar IsIndeterminate="True" Style="{StaticResource MDCircularProgressBar}" />
+
+                <md:PopupBox Style="{StaticResource MDMultiFloatingActionPopupBox}" >
+                    <StackPanel>
+                        <Button Style="{StaticResource MDRoundBoutton}" Content="123" md:RippleEditor.FeedBackBrush="White"/>
+                        <Button Style="{StaticResource MDRoundBoutton}" Content="34"/>
+                        <Button Style="{StaticResource MDRoundBoutton}" Content="45"/>
+                        <Button Style="{StaticResource MDRoundBoutton}" Content="567"/>
+                    </StackPanel>
+                </md:PopupBox>
             </StackPanel>
-            </md:DialogHost>
+        </md:DialogHost>
     </Grid>
 </Window>

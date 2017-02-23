@@ -76,6 +76,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\PopupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\ProgressBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\SmartHint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ToolTip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +122,7 @@
     <Compile Include="converter\HintProxyFabricConverter.cs" />
     <Compile Include="converter\MathConverter.cs" />
     <Compile Include="converter\MathMultipleConverter.cs" />
+    <Compile Include="converter\NullableToVisibilityConverter.cs" />
     <Compile Include="converter\RangePositionConverter.cs" />
     <Compile Include="converter\ShadowConverter.cs" />
     <Compile Include="converter\TextFieldHintVisibilityConverter.cs" />
@@ -128,6 +137,11 @@
     <Compile Include="HintProxyFabric.TextBox.cs" />
     <Compile Include="HintProxyFabric.cs" />
     <Compile Include="IHintProxy.cs" />
+    <Compile Include="PackIcon.cs" />
+    <Compile Include="PackIconBase.cs" />
+    <Compile Include="PackIconDataFactory.cs" />
+    <Compile Include="PackIconKind.cs" />
+    <Compile Include="PopupBox.cs" />
     <Compile Include="PopupEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -147,6 +161,7 @@
     <Compile Include="ShadowEditor.cs" />
     <Compile Include="SmartHint.cs" />
     <Compile Include="TextFieldEditor.cs" />
+    <Compile Include="ToolTipEditor.cs" />
     <Compile Include="TransitionEditor.cs" />
     <Compile Include="TreeEditor.cs" />
     <Compile Include="Underline.cs" />

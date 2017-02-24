@@ -37,13 +37,14 @@
                 </md:Card>
                 <ProgressBar IsIndeterminate="True" Style="{StaticResource MDLinearProgressBar}"/>
                 <ProgressBar IsIndeterminate="True" Style="{StaticResource MDCircularProgressBar}" />
-
+                <ToggleButton Style="{StaticResource MDHamburgerToggleButton}" />
                 <md:PopupBox Style="{StaticResource MDMultiFloatingActionPopupBox}" >
                     <StackPanel>
                         <Button Style="{StaticResource MDRoundBoutton}" Content="123" md:RippleEditor.FeedBackBrush="White"/>
                         <Button Style="{StaticResource MDRoundBoutton}" Content="34"/>
                         <Button Style="{StaticResource MDRoundBoutton}" Content="45"/>
                         <Button Style="{StaticResource MDRoundBoutton}" Content="567"/>
+
                     </StackPanel>
                 </md:PopupBox>
             </StackPanel>

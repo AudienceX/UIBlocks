@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace UIBlocks.MaterialDesignTheme
 {
+    //自动生成代码，请勿修改。
     internal static class PackIconDataFactory
     {
         internal static IDictionary<PackIconKind, string> Create() => new Dictionary<PackIconKind, string>

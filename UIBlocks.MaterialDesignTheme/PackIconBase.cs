@@ -44,7 +44,7 @@ namespace UIBlocks.MaterialDesignTheme
         }
 
         /// <summary>
-        /// Gets or sets the icon to display.
+        ///显示图标的种类。
         /// </summary>
         public TKind Kind
         {

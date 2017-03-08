@@ -17,8 +17,8 @@
 
 
     <Style x:Key="MDSeparator" TargetType="{x:Type Separator}">
-        <Setter Property="Background" Value="{DynamicResource MaterialDesignSelection}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignSelection}"/>
+        <Setter Property="Background" Value="{DynamicResource MDSelection}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MDSelection}"/>
         <Setter Property="MinHeight" Value="1"/>
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="Height" Value="16"/>
@@ -147,6 +147,7 @@
 
     <wpf:PackIcon x:Shared="False" x:Key="MDMultiFloatingActionPopupBoxIcon"
                   Kind="Plus" Width="24" Height="24" Foreground="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=wpf:PopupBox}, Path=Foreground}" />
+    
     <Style TargetType="{x:Type wpf:PopupBox}" x:Key="MDMultiFloatingActionPopupBox">
         <Setter Property="Background" Value="{DynamicResource Purple500Brush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Purple500Brush}"/>

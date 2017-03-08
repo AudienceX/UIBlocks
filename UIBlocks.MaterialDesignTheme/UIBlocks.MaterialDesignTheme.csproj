@@ -131,6 +131,7 @@
     <Compile Include="DialogOpenedEventArgs.cs" />
     <Compile Include="DialogSession.cs" />
     <Compile Include="DpiEditor.cs" />
+    <Compile Include="DrawHost.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="HintEditor.cs" />
     <Compile Include="HintProxyFabric.ComboBox.cs" />

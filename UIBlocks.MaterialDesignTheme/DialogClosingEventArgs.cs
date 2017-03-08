@@ -21,7 +21,7 @@ namespace UIBlocks.MaterialDesignTheme
         {
             if (session == null) throw new ArgumentNullException(nameof(session));
             Session = session;
-
+            
             Parameter = parameter;
         }
 
